@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Design your own custom doormat online — choose text, fonts, colors, patterns, sizes and preview in real-time. DoorMat Studio's interactive design tool." />
+  <title>Design Your Own Mat | DoorMat Studio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C97B4B'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23FFF8F0' font-family='Georgia,serif' font-weight='bold'>D</text></svg>" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .font-preview { font-family: 'Playfair Display', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+    .step-panel { display:none; }
+    .step-panel.active { display:block; }
+    .step-indicator { display:flex; align-items:center; gap:0; }
+    .step-dot { width:36px;height:36px;border-radius:50%;background:var(--clr-border);color:var(--clr-text-muted);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;transition:all 0.3s ease;flex-shrink:0; }
+    .step-dot.active { background:var(--clr-primary);color:#fff;box-shadow:0 4px 14px rgba(201,123,75,0.4); }
+    .step-dot.done { background:var(--clr-primary-dark);color:#fff; }
+    .step-line { flex:1;height:2px;background:var(--clr-border);transition:background 0.3s ease; }
+    .step-line.done { background:var(--clr-primary); }
+    .pattern-swatch { width:70px;height:50px;border-radius:var(--radius-sm);cursor:pointer;border:3px solid transparent;transition:var(--transition-fast);display:flex;align-items:center;justify-content:center;font-size:1.2rem;overflow:hidden; }
+    .pattern-swatch:hover,.pattern-swatch.active { border-color:var(--clr-primary);transform:scale(1.08); }
+    .mat-bg-natural { background:linear-gradient(135deg,#8B6040,#6B4520); }
+    .mat-bg-dark { background:linear-gradient(135deg,#2D2D2D,#1A1A1A); }
+    .mat-bg-terra { background:linear-gradient(135deg,#C97B4B,#A85F30); }
+    .mat-bg-green { background:linear-gradient(135deg,#4A6741,#2D4028); }
+    .mat-bg-navy { background:linear-gradient(135deg,#2A3D5A,#1A2840); }
+    .mat-bg-sand { background:linear-gradient(135deg,#C4A060,#9A7840); }
+  </style>
+</head>
+<body>
+<div id="preloader"><div class="preloader-inner"><div class="preloader-mat"><i class="bi bi-palette2"></i></div><p style="color:var(--clr-primary);font-weight:600;font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;margin:0;">Loading Studio…</p></div></div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-warm navbar-expand-lg" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><div class="brand-icon"><i class="bi bi-house-heart-fill"></i></div><div class="brand-text"><span class="brand-name">DoorMat Studio</span><span class="brand-tagline">Crafted With Care</span></div></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navDYO" aria-controls="navDYO" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navDYO">
+      <ul class="navbar-nav mx-auto gap-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+<li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions ms-2"><button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button><a href="login.html" class="btn-warm ms-2" style="padding:10px 20px;font-size:0.85rem;"><i class="bi bi-person-fill"></i> Sign In</a></div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-bg" aria-hidden="true"><img src="https://images.pexels.com/photos/4440772/pexels-photo-4440772.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" loading="eager" /></div>
+  <div class="container">
+    <div class="section-badge"><i class="bi bi-palette2"></i> Interactive Studio</div>
+    <h1>Design Your <em style="color:var(--clr-primary-light);">Own Mat</em></h1>
+    <p class="page-header-sub">Pick your text, fonts, colors, and size — preview it live as you design.</p>
+    <div class="page-header-cta"><a href="#studio" class="btn-warm" style="font-size:0.95rem;padding:14px 30px;"><i class="bi bi-arrow-right"></i> Start Designing</a><a href="pricing.html" class="btn-warm-outline" style="font-size:0.95rem;padding:14px 30px;"><i class="bi bi-tag"></i> View Pricing</a></div>
+  </div>
+</section>
+
+<!-- 1. STEP INDICATOR -->
+<section class="section-pad-sm bg-warm-2" aria-label="Design steps">
+  <div class="container">
+    <div class="step-indicator justify-content-center" id="stepIndicator">
+      <div class="step-dot active" id="dot1">1</div>
+      <div class="step-line" id="line1"></div>
+      <div class="step-dot" id="dot2">2</div>
+      <div class="step-line" id="line2"></div>
+      <div class="step-dot" id="dot3">3</div>
+      <div class="step-line" id="line3"></div>
+      <div class="step-dot" id="dot4">4</div>
+      <div class="step-line" id="line4"></div>
+      <div class="step-dot" id="dot5">5</div>
+    </div>
+    <div class="d-flex justify-content-between mt-2" style="max-width:480px;margin:0 auto;font-size:0.75rem;color:var(--clr-text-muted);font-weight:500;">
+      <span>Text</span><span>Font</span><span>Color</span><span>Size</span><span>Order</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2. DESIGN STUDIO -->
+<section class="section-pad" id="studio" aria-labelledby="studio-title">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <!-- Left: Controls -->
+      <div class="col-lg-5 animate-on-scroll slide-left">
+        <div class="section-badge"><i class="bi bi-magic"></i> Design Studio</div>
+        <h2 class="section-title mt-2" id="studio-title">Create Your <em>Unique Mat</em></h2>
+
+        <!-- Step 1: Text -->
+        <div class="step-panel active" id="step1">
+          <h4 style="font-size:1.05rem;margin-bottom:16px;">Step 1: Your Custom Text</h4>
+          <div class="form-warm mb-3">
+            <label class="form-label" for="matText">Main Text (line 1)</label>
+            <input type="text" class="form-control" id="matText" placeholder="e.g. WELCOME HOME" maxlength="25" value="WELCOME HOME" />
+            <div style="font-size:0.78rem;color:var(--clr-text-muted);margin-top:4px;"><span id="charCount">12</span>/25 characters</div>
+          </div>
+          <div class="form-warm mb-3">
+            <label class="form-label" for="matSubText">Sub-Text (line 2, optional)</label>
+            <input type="text" class="form-control" id="matSubText" placeholder='e.g. "The Johnsons" or Est. 2018' maxlength="20" />
+          </div>
+          <div class="form-warm mb-4">
+            <label class="form-label" for="matEmoji">Add an Icon</label>
+            <select class="form-select" id="matEmoji">
+              <option value="">None</option>
+              <option value="bi-house-heart-fill">Home</option>
+              <option value="bi-leaf-fill">Leaf</option>
+              <option value="bi-star-fill">Star</option>
+              <option value="bi-sun-fill">Sun</option>
+              <option value="bi-heart-fill">Heart</option>
+              <option value="bi-flower1">Flower</option>
+              <option value="bi-stars">Sparkle</option>
+            </select>
+          </div>
+          <button class="btn-warm w-100" onclick="goToStep(2)">Next: Choose Font <i class="bi bi-arrow-right ms-2"></i></button>
+        </div>
+
+        <!-- Step 2: Font -->
+        <div class="step-panel" id="step2">
+          <h4 style="font-size:1.05rem;margin-bottom:16px;">Step 2: Choose a Font</h4>
+          <div class="row g-3 mb-4" id="fontGrid">
+            <div class="col-6"><div class="card-warm p-3 text-center font-option active" data-font="'Playfair Display', serif" style="cursor:pointer;" onclick="selectFont(this,'Playfair Display, serif')"><div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--clr-text);margin-bottom:4px;">Playfair</div><div style="font-size:0.72rem;color:var(--clr-text-muted);">Elegant Serif</div></div></div>
+            <div class="col-6"><div class="card-warm p-3 text-center font-option" data-font="Georgia, serif" style="cursor:pointer;" onclick="selectFont(this,'Georgia, serif')"><div style="font-family:Georgia,serif;font-size:1.2rem;font-weight:700;color:var(--clr-text);margin-bottom:4px;">Georgia</div><div style="font-size:0.72rem;color:var(--clr-text-muted);">Classic Serif</div></div></div>
+            <div class="col-6"><div class="card-warm p-3 text-center font-option" data-font="'Inter', sans-serif" style="cursor:pointer;" onclick="selectFont(this,'Inter, sans-serif')"><div style="font-family:'Inter',sans-serif;font-size:1.2rem;font-weight:700;color:var(--clr-text);margin-bottom:4px;">Inter</div><div style="font-size:0.72rem;color:var(--clr-text-muted);">Modern Sans</div></div></div>
+            <div class="col-6"><div class="card-warm p-3 text-center font-option" data-font="'Courier New', monospace" style="cursor:pointer;" onclick="selectFont(this,'Courier New, monospace')"><div style="font-family:'Courier New',monospace;font-size:1rem;font-weight:700;color:var(--clr-text);margin-bottom:4px;">Courier</div><div style="font-size:0.72rem;color:var(--clr-text-muted);">Typewriter</div></div></div>
+          </div>
+          <div class="d-flex gap-3">
+            <button class="btn-warm-outline" onclick="goToStep(1)"><i class="bi bi-arrow-left"></i> Back</button>
+            <button class="btn-warm flex-fill" onclick="goToStep(3)">Next: Choose Color <i class="bi bi-arrow-right ms-2"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 3: Color -->
+        <div class="step-panel" id="step3">
+          <h4 style="font-size:1.05rem;margin-bottom:16px;">Step 3: Mat & Text Colors</h4>
+          <div class="mb-4">
+            <div style="font-weight:600;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;">Mat Background Color:</div>
+            <div class="d-flex gap-2 flex-wrap">
+              <div class="palette-swatch active bg-color-swatch mat-bg-natural" style="background:#8B6040;" data-color="#8B6040" title="Natural Coir"></div>
+              <div class="palette-swatch bg-color-swatch" style="background:#2D2D2D;" data-color="#2D2D2D" title="Charcoal"></div>
+              <div class="palette-swatch bg-color-swatch" style="background:#C97B4B;" data-color="#C97B4B" title="Terracotta"></div>
+              <div class="palette-swatch bg-color-swatch" style="background:#4A6741;" data-color="#4A6741" title="Forest Green"></div>
+              <div class="palette-swatch bg-color-swatch" style="background:#2A3D5A;" data-color="#2A3D5A" title="Navy Blue"></div>
+              <div class="palette-swatch bg-color-swatch" style="background:#C4A060;" data-color="#C4A060" title="Sandy Gold"></div>
+              <div class="palette-swatch bg-color-swatch" style="background:#8A4A4A;" data-color="#8A4A4A" title="Brick Red"></div>
+              <div class="palette-swatch bg-color-swatch" style="background:#4A4A8A;" data-color="#4A4A8A" title="Deep Blue"></div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div style="font-weight:600;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;">Text Color:</div>
+            <div class="d-flex gap-2 flex-wrap">
+              <div class="palette-swatch active color-swatch" style="background:#FFFFFF;" data-color="#FFFFFF" title="White"></div>
+              <div class="palette-swatch color-swatch" style="background:#F5EDE0;" data-color="#F5EDE0" title="Cream"></div>
+              <div class="palette-swatch color-swatch" style="background:#C97B4B;" data-color="#C97B4B" title="Terracotta"></div>
+              <div class="palette-swatch color-swatch" style="background:#D4A96A;" data-color="#D4A96A" title="Gold"></div>
+              <div class="palette-swatch color-swatch" style="background:#2D1B10;" data-color="#2D1B10" title="Dark Brown"></div>
+              <div class="palette-swatch color-swatch" style="background:#4A6741;" data-color="#4A6741" title="Forest Green"></div>
+            </div>
+          </div>
+          <div class="d-flex gap-3">
+            <button class="btn-warm-outline" onclick="goToStep(2)"><i class="bi bi-arrow-left"></i> Back</button>
+            <button class="btn-warm flex-fill" onclick="goToStep(4)">Next: Choose Size <i class="bi bi-arrow-right ms-2"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 4: Size & Pattern -->
+        <div class="step-panel" id="step4">
+          <h4 style="font-size:1.05rem;margin-bottom:16px;">Step 4: Size & Pattern</h4>
+          <div class="mb-4">
+            <div style="font-weight:600;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;">Select Size:</div>
+            <div class="d-flex gap-2 flex-wrap size-group" id="sizeGroup">
+              <button class="size-btn" data-size="18×30" data-price="28" onclick="selectSize(this)">18"×30" <span style="display:block;font-size:0.72rem;opacity:0.7;">$28</span></button>
+              <button class="size-btn active" data-size="24×36" data-price="38" onclick="selectSize(this)">24"×36" <span style="display:block;font-size:0.72rem;opacity:0.7;">$38</span></button>
+              <button class="size-btn" data-size="24×48" data-price="52" onclick="selectSize(this)">24"×48" <span style="display:block;font-size:0.72rem;opacity:0.7;">$52</span></button>
+              <button class="size-btn" data-size="36×60" data-price="74" onclick="selectSize(this)">36"×60" <span style="display:block;font-size:0.72rem;opacity:0.7;">$74</span></button>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div style="font-weight:600;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;">Border Pattern:</div>
+            <div class="d-flex gap-2 flex-wrap">
+              <div class="pattern-swatch active" title="No border" onclick="selectPattern(this,'none')" style="background:var(--clr-warm);border:3px solid var(--clr-primary);">None</div>
+              <div class="pattern-swatch" title="Simple border" onclick="selectPattern(this,'simple')" style="background:var(--clr-warm);border:3px solid var(--clr-border);outline:2px solid #8B6040;outline-offset:2px;">Simple</div>
+              <div class="pattern-swatch" title="Double border" onclick="selectPattern(this,'double')" style="background:var(--clr-warm);border:4px double #8B6040;">Double</div>
+              <div class="pattern-swatch" title="Rope border" onclick="selectPattern(this,'rope')" style="background:var(--clr-warm);background-image:repeating-linear-gradient(45deg,#8B6040 0,#8B6040 4px,transparent 0,transparent 50%);background-size:8px 8px;">〰</div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="upload-area" id="logoUpload">
+              <i class="bi bi-cloud-upload" style="font-size:2rem;color:var(--clr-primary);display:block;margin-bottom:8px;"></i>
+              <div style="font-weight:600;font-size:0.9rem;color:var(--clr-text);margin-bottom:4px;">Upload Your Logo (Optional)</div>
+              <div style="font-size:0.8rem;color:var(--clr-text-muted);">PNG, SVG or JPG · Max 5MB</div>
+            </div>
+          </div>
+          <div class="d-flex gap-3">
+            <button class="btn-warm-outline" onclick="goToStep(3)"><i class="bi bi-arrow-left"></i> Back</button>
+            <button class="btn-warm flex-fill" onclick="goToStep(5)">Review Order <i class="bi bi-arrow-right ms-2"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 5: Order Summary -->
+        <div class="step-panel" id="step5">
+          <h4 style="font-size:1.05rem;margin-bottom:16px;">Step 5: Review & Order</h4>
+          <div class="card-warm p-4 mb-4">
+            <h5 style="font-size:0.95rem;margin-bottom:16px;color:var(--clr-text);">Order Summary</h5>
+            <div class="d-flex justify-content-between py-2" style="border-bottom:1px solid var(--clr-border);font-size:0.9rem;"><span style="color:var(--clr-text-muted);">Text:</span><span id="summaryText" style="font-weight:600;">WELCOME HOME</span></div>
+            <div class="d-flex justify-content-between py-2" style="border-bottom:1px solid var(--clr-border);font-size:0.9rem;"><span style="color:var(--clr-text-muted);">Size:</span><span id="summarySize" style="font-weight:600;">24"×36"</span></div>
+            <div class="d-flex justify-content-between py-2" style="border-bottom:1px solid var(--clr-border);font-size:0.9rem;"><span style="color:var(--clr-text-muted);">Material:</span><span style="font-weight:600;">Natural Coir</span></div>
+            <div class="d-flex justify-content-between py-2" style="border-bottom:1px solid var(--clr-border);font-size:0.9rem;"><span style="color:var(--clr-text-muted);">Production:</span><span style="font-weight:600;">2–3 business days</span></div>
+            <div class="d-flex justify-content-between py-3" style="font-size:1.1rem;"><span style="font-weight:700;">Total:</span><span id="summaryPrice" style="font-weight:800;color:var(--clr-primary);">$50.00</span></div>
+          </div>
+          <form class="form-warm" data-validate id="orderForm">
+            <div class="mb-3"><label class="form-label" for="orderName">Full Name</label><input type="text" class="form-control" id="orderName" placeholder="Your full name" required /></div>
+            <div class="mb-3"><label class="form-label" for="orderEmail">Email Address</label><input type="email" class="form-control" id="orderEmail" placeholder="your@email.com" required /></div>
+            <div class="mb-4"><label class="form-label" for="orderNotes">Special Instructions</label><textarea class="form-control" id="orderNotes" rows="2" placeholder="Any special notes about your design..." data-auto-resize></textarea></div>
+            <button type="submit" class="btn-warm w-100" style="font-size:1rem;padding:16px;"><i class="bi bi-bag-check"></i> Place Custom Order</button>
+          </form>
+          <button class="btn-warm-outline w-100 mt-3" onclick="goToStep(4)"><i class="bi bi-arrow-left"></i> Back to Edit</button>
+        </div>
+      </div>
+
+      <!-- Right: Live Preview -->
+      <div class="col-lg-7 animate-on-scroll slide-right">
+        <div class="sticky-sidebar">
+          <div class="text-center mb-3">
+            <span class="section-badge"><i class="bi bi-eye"></i> Live Preview — Updates in Real-Time</span>
+          </div>
+          <div class="design-canvas" id="matPreview">
+            <!-- Decorative texture lines -->
+            <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.04) 0px,rgba(0,0,0,0.04) 1px,transparent 1px,transparent 8px);pointer-events:none;border-radius:inherit;" aria-hidden="true"></div>
+            <div class="mat-preview mat-bg-natural" id="matSurface" style="background:linear-gradient(135deg,#8B6040,#6B4520);box-shadow:inset 0 4px 20px rgba(0,0,0,0.3);">
+              <div style="text-align:center;padding:20px;">
+                <div id="previewEmoji" style="font-size:2rem;margin-bottom:8px;display:none;"></div>
+                <div class="preview-text" id="previewText" style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,2rem);font-weight:700;color:#FFFFFF;letter-spacing:0.08em;text-shadow:0 2px 8px rgba(0,0,0,0.4);text-transform:uppercase;">WELCOME HOME</div>
+                <div id="previewSubText" style="font-family:'Playfair Display',serif;font-size:clamp(0.7rem,1.5vw,1rem);font-weight:400;color:rgba(255,255,255,0.8);letter-spacing:0.12em;margin-top:8px;font-style:italic;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preview Info -->
+          <div class="row g-3 mt-3">
+            <div class="col-4"><div class="card-warm p-3 text-center"><div style="font-size:0.72rem;color:var(--clr-text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Size</div><div style="font-weight:700;font-size:0.9rem;" id="previewSize">24"×36"</div></div></div>
+            <div class="col-4"><div class="card-warm p-3 text-center"><div style="font-size:0.72rem;color:var(--clr-text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Material</div><div style="font-weight:700;font-size:0.9rem;">Natural Coir</div></div></div>
+            <div class="col-4"><div class="card-warm p-3 text-center"><div style="font-size:0.72rem;color:var(--clr-text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Price</div><div style="font-weight:700;font-size:0.9rem;color:var(--clr-primary);" id="previewPrice">$50.00</div></div></div>
+          </div>
+
+          <!-- Inspiration Gallery -->
+          <div class="mt-4">
+            <div style="font-weight:700;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:12px;color:var(--clr-text);">Need Inspiration? Try These:</div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button class="tag-chip" onclick="applyInspiration('WELCOME HOME')">Welcome Home</button>
+              <button class="tag-chip" onclick="applyInspiration('THE SMITHS')">The Smiths</button>
+              <button class="tag-chip" onclick="applyInspiration('EST. 2020')">Est. Year</button>
+              <button class="tag-chip" onclick="applyInspiration('WIPE YOUR PAWS')">Wipe Your Paws</button>
+              <button class="tag-chip" onclick="applyInspiration('HOME SWEET HOME')">Home Sweet Home</button>
+              <button class="tag-chip" onclick="applyInspiration('HELLO SUNSHINE')">Hello Sunshine</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. HOW IT WORKS -->
+<section class="section-pad bg-warm" aria-labelledby="how-title">
+  <div class="container">
+    <div class="text-center mb-5 animate-on-scroll">
+      <div class="section-badge mx-auto d-inline-flex"><i class="bi bi-info-circle"></i> How It Works</div>
+      <h2 class="section-title mt-2" id="how-title">From Your <em>Idea to Your Door</em></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3 animate-on-scroll"><div class="process-step text-center p-4"><div class="step-num">1</div><h4 style="font-size:1rem;">Design Online</h4><p style="font-size:0.88rem;">Use our studio to type your text, pick a font, choose colors, and select a size. See it live in the preview.</p></div></div>
+      <div class="col-sm-6 col-lg-3 animate-on-scroll"><div class="process-step text-center p-4"><div class="step-num">2</div><h4 style="font-size:1rem;">Approve Your Design</h4><p style="font-size:0.88rem;">We send a digital proof within 1 business day. You can request changes until you're completely happy.</p></div></div>
+      <div class="col-sm-6 col-lg-3 animate-on-scroll"><div class="process-step text-center p-4"><div class="step-num">3</div><h4 style="font-size:1rem;">We Craft It</h4><p style="font-size:0.88rem;">Our artisans hand-cut and print your mat in 2–3 business days using premium materials.</p></div></div>
+      <div class="col-sm-6 col-lg-3 animate-on-scroll"><div class="process-step text-center p-4"><div class="step-num">4</div><h4 style="font-size:1rem;">Delivered to You</h4><p style="font-size:0.88rem;">Your mat arrives in beautiful eco packaging within 5–7 business days, ready to greet your guests.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. DESIGN GALLERY — Popular Custom Designs -->
+<section class="section-pad" aria-labelledby="gallery-title">
+  <div class="container">
+    <div class="text-center mb-5 animate-on-scroll">
+      <div class="section-badge mx-auto d-inline-flex"><i class="bi bi-images"></i> Customer Designs</div>
+      <h2 class="section-title mt-2" id="gallery-title">Customer-Created <em>Masterpieces</em></h2>
+      <p class="section-subtitle mx-auto">Real mats designed by real customers using our studio. Get inspired by what others have created.</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-3 animate-on-scroll">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#8B6040,#6B4520);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">
+          <div><div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:0.06em;">THE MILLERS</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:6px;font-style:italic;">Est. 2019</div></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 animate-on-scroll">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#2D2D2D,#1A1A1A);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">
+          <div><div style="font-size:1.8rem;margin-bottom:8px;color:#C97B4B;"><i class="bi bi-house-heart-fill"></i></div><div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#C97B4B;letter-spacing:0.06em;">WIPE YOUR PAWS</div></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 animate-on-scroll">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#4A6741,#2D4028);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">
+          <div><div style="font-size:1.5rem;margin-bottom:8px;color:#F5EDE0;"><i class="bi bi-flower1"></i></div><div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#F5EDE0;letter-spacing:0.08em;">HELLO SUNSHINE</div></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 animate-on-scroll">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#C97B4B,#A85F30);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">
+          <div><div style="font-family:Georgia,serif;font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:0.06em;">WELCOME</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.8);margin-top:6px;letter-spacing:0.2em;">CHEZ ANDERSON</div></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 animate-on-scroll">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#2A3D5A,#1A2840);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">
+          <div><div style="font-family:'Courier New',monospace;font-size:1rem;font-weight:700;color:#D4A96A;letter-spacing:0.1em;">HOME SWEET</div><div style="font-family:'Courier New',monospace;font-size:1rem;font-weight:700;color:#D4A96A;letter-spacing:0.1em;">HOME</div></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 animate-on-scroll">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#8A4A4A,#6A2A2A);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">
+          <div><div style="font-size:1.8rem;margin-bottom:8px;color:#F5EDE0;"><i class="bi bi-hearts"></i></div><div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F5EDE0;letter-spacing:0.06em;">MADE WITH LOVE</div></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 animate-on-scroll">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#C4A060,#9A7840);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">
+          <div><div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#4A3728;letter-spacing:0.06em;">THE HENDERSONS</div><div style="font-size:0.75rem;color:rgba(74,55,40,0.7);margin-top:6px;">Since 2014</div></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 animate-on-scroll">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#4A4A8A,#2A2A6A);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">
+          <div><div style="font-family:'Inter',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:0.04em;">COME BACK</div><div style="font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:400;color:rgba(255,255,255,0.75);margin-top:4px;">WITH SNACKS</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. CUSTOMIZATION OPTIONS -->
+<section class="section-pad bg-warm" aria-labelledby="options-title">
+  <div class="container">
+    <div class="text-center mb-5 animate-on-scroll">
+      <div class="section-badge mx-auto d-inline-flex"><i class="bi bi-sliders"></i> All Options</div>
+      <h2 class="section-title mt-2" id="options-title">Everything You Can <em>Customize</em></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 animate-on-scroll"><div class="card-warm p-4 h-100"><div class="feature-icon-wrap warm mb-3"><i class="bi bi-fonts"></i></div><h4>Typography</h4><ul style="list-style:none;padding:0;font-size:0.88rem;color:var(--clr-text-light);"><li class="mb-1"><i class="bi bi-check text-primary-warm me-2"></i>20+ curated font families</li><li class="mb-1"><i class="bi bi-check text-primary-warm me-2"></i>Script, serif, sans, display</li><li class="mb-1"><i class="bi bi-check text-primary-warm me-2"></i>Font size & weight control</li><li><i class="bi bi-check text-primary-warm me-2"></i>Letter spacing adjustment</li></ul></div></div>
+      <div class="col-md-4 animate-on-scroll"><div class="card-warm p-4 h-100"><div class="feature-icon-wrap warm mb-3"><i class="bi bi-palette2"></i></div><h4>Colors & Patterns</h4><ul style="list-style:none;padding:0;font-size:0.88rem;color:var(--clr-text-light);"><li class="mb-1"><i class="bi bi-check text-primary-warm me-2"></i>100+ mat background colors</li><li class="mb-1"><i class="bi bi-check text-primary-warm me-2"></i>Unlimited text color options</li><li class="mb-1"><i class="bi bi-check text-primary-warm me-2"></i>4 border/frame styles</li><li><i class="bi bi-check text-primary-warm me-2"></i>Custom gradient blends</li></ul></div></div>
+      <div class="col-md-4 animate-on-scroll"><div class="card-warm p-4 h-100"><div class="feature-icon-wrap warm mb-3"><i class="bi bi-arrows-fullscreen"></i></div><h4>Size & Shape</h4><ul style="list-style:none;padding:0;font-size:0.88rem;color:var(--clr-text-light);"><li class="mb-1"><i class="bi bi-check text-primary-warm me-2"></i>4 standard sizes + custom</li><li class="mb-1"><i class="bi bi-check text-primary-warm me-2"></i>Rectangle, oval, round, arch</li><li class="mb-1"><i class="bi bi-check text-primary-warm me-2"></i>Up to 6 feet wide</li><li><i class="bi bi-check text-primary-warm me-2"></i>Runner & landscape options</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FAQ + CTA -->
+<section class="section-pad" aria-labelledby="dyo-faq-title">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6 animate-on-scroll">
+        <div class="section-badge"><i class="bi bi-question-circle"></i> Common Questions</div>
+        <h2 class="section-title mt-2" id="dyo-faq-title">Design <em>FAQ</em></h2>
+        <div class="accordion faq-accordion mt-4" id="faqDYO">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dyoFaq1">Do I get to see a proof before it's made?</button></h3><div id="dyoFaq1" class="accordion-collapse collapse show" data-bs-parent="#faqDYO"><div class="accordion-body">Yes! After placing your order, our design team sends a digital proof within 1 business day. You can request as many revisions as you need before we start production.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dyoFaq2">Can I upload my own artwork or logo?</button></h3><div id="dyoFaq2" class="accordion-collapse collapse" data-bs-parent="#faqDYO"><div class="accordion-body">Absolutely! Upload PNG, SVG, or JPG files. We recommend SVG or high-resolution PNG (300+ DPI) for the best print quality. Our team reviews all uploads for printability.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dyoFaq3">How long does the design process take?</button></h3><div id="dyoFaq3" class="accordion-collapse collapse" data-bs-parent="#faqDYO"><div class="accordion-body">Design approval typically takes 1–2 days. Production takes 2–3 days. Total from order to shipping is usually 4–5 business days, plus 2–3 days for delivery.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dyoFaq4">Is there a minimum order quantity?</button></h3><div id="dyoFaq4" class="accordion-collapse collapse" data-bs-parent="#faqDYO"><div class="accordion-body">No minimum! Whether you want 1 mat or 1,000, we're here to help. Bulk orders get tiered discounts starting at just 5 units. Check our Bulk Orders page for pricing.</div></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 animate-on-scroll slide-right">
+        <div class="card-warm p-5 text-center h-100" style="background:linear-gradient(135deg,var(--clr-secondary),#3A2418);border:none;">
+          <i class="bi bi-palette2" style="font-size:3rem;color:var(--clr-primary-light);margin-bottom:20px;display:block;"></i>
+          <h3 style="color:var(--clr-warm);font-size:1.5rem;margin-bottom:12px;">Start Creating Now</h3>
+          <p style="color:rgba(245,237,224,0.75);margin-bottom:28px;font-size:0.95rem;">Your perfect mat is just a few clicks away. Design it in minutes — we'll craft it with love.</p>
+          <div class="d-flex flex-column gap-3">
+            <a href="#studio" class="btn-warm" style="font-size:1rem;padding:16px;"><i class="bi bi-palette2"></i> Start Designing</a>
+            <a href="bulk-orders.html" class="btn-warm-outline" style="color:var(--clr-warm);border-color:rgba(245,237,224,0.35);"><i class="bi bi-boxes"></i> Bulk Order Enquiry</a>
+          </div>
+          <div class="d-flex justify-content-center gap-4 mt-4 flex-wrap" style="color:rgba(245,237,224,0.6);font-size:0.82rem;">
+            <span><i class="bi bi-check2 me-1" style="color:var(--clr-primary-light);"></i>Free digital proof</span>
+            <span><i class="bi bi-check2 me-1" style="color:var(--clr-primary-light);"></i>Unlimited revisions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-warm section-pad" aria-label="Site footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <a class="navbar-brand footer-logo mb-4 d-inline-flex text-decoration-none" href="index.html">
+          <div class="brand-icon me-2" aria-hidden="true"><i class="bi bi-house-heart-fill"></i></div>
+          <div class="brand-text"><span class="brand-name">DoorMat Studio</span><span class="brand-tagline">Crafted With Care</span></div>
+        </a>
+        <p style="color:rgba(245,237,224,0.65);font-size:0.92rem;line-height:1.8;max-width:320px;">Premium custom doormats & personalized welcome mats for homes, offices, hotels, and businesses. Every entrance deserves a beautiful beginning.</p>
+        <div class="social-links mt-4">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="bi bi-chevron-right"></i>Home</a></li>
+          <li><a href="home2.html"><i class="bi bi-chevron-right"></i>Home 2</a></li>
+          <li><a href="about.html"><i class="bi bi-chevron-right"></i>About Us</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Services</a></li>
+          <li><a href="blog.html"><i class="bi bi-chevron-right"></i>Blog</a></li>
+          <li><a href="pricing.html"><i class="bi bi-chevron-right"></i>Pricing</a></li>
+          <li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Our Services</h6>
+        <ul class="footer-links">
+          <li><a href="design-your-own.html"><i class="bi bi-chevron-right"></i>Design Your Own</a></li>
+          <li><a href="bulk-orders.html"><i class="bi bi-chevron-right"></i>Bulk Orders</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Home Mats</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Office Mats</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Hotel Mats</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Event Mats</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6>Stay Inspired</h6>
+        <p style="color:rgba(245,237,224,0.65);font-size:0.9rem;margin-bottom:16px;">Get new designs, exclusive offers, and home styling tips.</p>
+        <form class="d-flex gap-2 mb-3" data-validate>
+          <input type="email" class="form-control" placeholder="Enter your email" required style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:var(--clr-warm);" aria-label="Email for newsletter" />
+          <button class="btn-warm" type="submit" style="padding:11px 20px;white-space:nowrap;font-size:0.85rem;">Subscribe</button>
+        </form>
+        <p style="color:rgba(245,237,224,0.4);font-size:0.78rem;">No spam, ever. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <p>© 2026 DoorMat Studio. All rights reserved.</p>
+      <div class="d-flex gap-3 flex-wrap">
+        <a href="#" style="color:rgba(245,237,224,0.5);font-size:0.82rem;">Privacy Policy</a>
+        <a href="#" style="color:rgba(245,237,224,0.5);font-size:0.82rem;">Terms of Service</a>
+        <a href="#" style="color:rgba(245,237,224,0.5);font-size:0.82rem;">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner"><div class="container d-flex flex-wrap align-items-center justify-content-between gap-3"><div class="d-flex align-items-center gap-3"><i class="bi bi-cookie" style="font-size:1.5rem;color:var(--clr-primary-light);"></i><p style="margin:0;font-size:0.88rem;color:rgba(245,237,224,0.85);">We use cookies to enhance your experience.</p></div><button class="btn-warm" style="padding:10px 22px;font-size:0.85rem;" data-accept-cookies>Got it!</button></div></div>
+<button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+// Design Studio Logic
+let currentStep = 1;
+const totalSteps = 5;
+let currentPrice = 38;
+const CUSTOM_TEXT_FEE = 12;
+
+function goToStep(step) {
+  document.getElementById('step' + currentStep).classList.remove('active');
+  document.getElementById('dot' + currentStep).classList.remove('active');
+  document.getElementById('dot' + currentStep).classList.add('done');
+  if (currentStep < step) {
+    for (let i = currentStep; i < step; i++) {
+      const line = document.getElementById('line' + i);
+      if (line) line.classList.add('done');
+    }
+  }
+  currentStep = step;
+  document.getElementById('step' + currentStep).classList.add('active');
+  document.getElementById('dot' + currentStep).classList.add('active');
+  document.getElementById('dot' + currentStep).classList.remove('done');
+  if (step === 5) updateSummary();
+  window.scrollTo({ top: document.getElementById('studio').offsetTop - 100, behavior: 'smooth' });
+}
+
+function selectFont(el, font) {
+  document.querySelectorAll('.font-option').forEach(f => f.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('previewText').style.fontFamily = font;
+  document.getElementById('previewSubText').style.fontFamily = font;
+}
+
+function selectSize(btn) {
+  document.querySelectorAll('#sizeGroup .size-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const size = btn.dataset.size;
+  const price = parseInt(btn.dataset.price);
+  currentPrice = price + CUSTOM_TEXT_FEE;
+  document.getElementById('previewSize').textContent = size.replace('×', '"×') + '"';
+  updatePrice();
+}
+
+function selectPattern(el, pattern) {
+  document.querySelectorAll('.pattern-swatch').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function updatePrice() {
+  const total = currentPrice;
+  document.getElementById('previewPrice').textContent = '$' + total + '.00';
+  const priceEl = document.getElementById('summaryPrice');
+  if (priceEl) priceEl.textContent = '$' + total + '.00';
+}
+
+function updateSummary() {
+  const text = document.getElementById('matText').value || 'WELCOME HOME';
+  document.getElementById('summaryText').textContent = text;
+  const activeSize = document.querySelector('#sizeGroup .size-btn.active');
+  if (activeSize) document.getElementById('summarySize').textContent = activeSize.dataset.size.replace('×', '"×') + '"';
+  updatePrice();
+}
+
+function applyInspiration(text) {
+  document.getElementById('matText').value = text;
+  document.getElementById('previewText').textContent = text;
+  document.getElementById('charCount').textContent = text.length;
+}
+
+// Live text preview
+document.getElementById('matText').addEventListener('input', function() {
+  document.getElementById('previewText').textContent = this.value || 'YOUR TEXT HERE';
+  document.getElementById('charCount').textContent = this.value.length;
+});
+
+document.getElementById('matSubText').addEventListener('input', function() {
+  document.getElementById('previewSubText').textContent = this.value;
+});
+
+document.getElementById('matEmoji').addEventListener('change', function() {
+  const emojiEl = document.getElementById('previewEmoji');
+  if (this.value) { emojiEl.innerHTML = '<i class="bi ' + this.value + '"></i>'; emojiEl.style.display = 'block'; }
+  else { emojiEl.style.display = 'none'; }
+});
+
+// Color swatches for design studio
+document.querySelectorAll('.color-swatch').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('previewText').style.color = btn.dataset.color;
+    document.getElementById('previewSubText').style.color = btn.dataset.color;
+  });
+});
+
+document.querySelectorAll('.bg-color-swatch').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.bg-color-swatch').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('matSurface').style.background = btn.dataset.color;
+  });
+});
+
+// Logo upload area
+document.getElementById('logoUpload').addEventListener('click', () => {
+  const input = document.createElement('input');
+  input.type = 'file'; input.accept = 'image/*';
+  input.onchange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      document.getElementById('logoUpload').innerHTML = '<i class="bi bi-check-circle-fill text-success" style="font-size:2rem;display:block;margin-bottom:8px;"></i><div style="font-weight:600;font-size:0.9rem;">Logo uploaded: ' + file.name + '</div>';
+    }
+  };
+  input.click();
+});
+
+// Form submission
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('[type="submit"]');
+  btn.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i> Order Placed! Check Your Email.';
+  btn.disabled = true;
+  btn.style.background = 'linear-gradient(135deg,#3E8B4A,#2D6E36)';
+  window.showToast('Your custom mat order has been received!', 'success');
+});
+</script>
+</body>
+</html>

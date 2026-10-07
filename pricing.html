@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Simple, transparent pricing for custom doormats from DoorMat Studio. Individual plans, business plans, and bulk pricing — no hidden fees." />
+  <title>Pricing | DoorMat Studio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C97B4B'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23FFF8F0' font-family='Georgia,serif' font-weight='bold'>D</text></svg>" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div id="preloader"><div class="preloader-inner"><div class="preloader-mat"><i class="bi bi-house-heart-fill"></i></div><p style="color:var(--clr-primary);font-weight:600;font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;margin:0;">Loading…</p></div></div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-warm navbar-expand-lg" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><div class="brand-icon"><i class="bi bi-house-heart-fill"></i></div><div class="brand-text"><span class="brand-name">DoorMat Studio</span><span class="brand-tagline">Crafted With Care</span></div></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navPricing" aria-controls="navPricing" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navPricing">
+      <ul class="navbar-nav mx-auto gap-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions ms-2"><button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button><a href="login.html" class="btn-warm ms-2" style="padding:10px 20px;font-size:0.85rem;"><i class="bi bi-person-fill"></i> Sign In</a></div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-bg" aria-hidden="true"><img src="https://images.pexels.com/photos/17015979/pexels-photo-17015979.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" loading="eager" /></div>
+  <div class="container">
+    <div class="section-badge"><i class="bi bi-tag"></i> Pricing Plans</div>
+    <h1>Simple, Transparent <em style="color:var(--clr-primary-light);">Pricing</em></h1>
+    <p class="page-header-sub">Honest pricing with free revisions and no hidden fees.</p>
+    <div class="page-header-cta"><a href="design-your-own.html" class="btn-warm" style="font-size:0.95rem;padding:14px 30px;"><i class="bi bi-palette2"></i> Design Your Mat</a><a href="bulk-orders.html" class="btn-warm-outline" style="font-size:0.95rem;padding:14px 30px;"><i class="bi bi-boxes"></i> Bulk Discounts</a></div>
+  </div>
+</section>
+
+<!-- 1. TOGGLE + PRICING CARDS -->
+<section class="section-pad" aria-labelledby="pricing-plans-title">
+  <div class="container">
+    <div class="text-center mb-5 animate-on-scroll">
+      <div class="section-badge mx-auto d-inline-flex"><i class="bi bi-tag"></i> Plans & Pricing</div>
+      <h2 class="section-title mt-2" id="pricing-plans-title">Choose Your <em>Plan</em></h2>
+      <p class="section-subtitle mx-auto">No subscriptions required. Pay per mat. Our plans organize features, not lock you in.</p>
+      <!-- Toggle -->
+      <div class="pricing-toggle mt-4">
+        <span id="toggleLabelSingle" style="font-weight:700;color:var(--clr-primary);">Single Order</span>
+        <div class="price-toggle-switch ms-3 me-3" id="pricingToggle" role="switch" aria-checked="false" tabindex="0">
+          <div class="toggle-knob"></div>
+        </div>
+        <span id="toggleLabelBulk">Bulk Order</span>
+        <span class="tag-chip ms-2" style="background:rgba(201,123,75,0.15);border-color:rgba(201,123,75,0.3);color:var(--clr-primary);font-size:0.72rem;">Save up to 30%</span>
+      </div>
+    </div>
+
+    <!-- Single Order Plans -->
+    <div id="singlePlans" class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4 animate-on-scroll">
+        <div class="pricing-card h-100">
+          <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-text-muted);margin-bottom:8px;">Essentials</div>
+          <div class="pricing-amount">$28<span style="font-size:1rem;font-weight:400;color:var(--clr-text-muted);">/mat</span></div>
+          <div style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:24px;">18"×30" Natural Coir · Standard</div>
+          <ul class="pricing-features">
+            <li class="included"><i class="bi bi-check-lg"></i> Natural coir material</li>
+            <li class="included"><i class="bi bi-check-lg"></i> 5 standard color options</li>
+            <li class="included"><i class="bi bi-check-lg"></i> 3 font choices</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Standard backing</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Custom text (+$12)</li>
+            <li class="not-included"><i class="bi bi-x-lg"></i> Logo upload</li>
+            <li class="not-included"><i class="bi bi-x-lg"></i> Priority production</li>
+            <li class="not-included"><i class="bi bi-x-lg"></i> Express shipping</li>
+          </ul>
+          <a href="design-your-own.html" class="btn-warm-outline w-100 mt-auto">Start Designing</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 animate-on-scroll">
+        <div class="pricing-card featured h-100">
+          <div class="pricing-badge">Most Popular</div>
+          <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-primary-light);margin-bottom:8px;">Signature</div>
+          <div class="pricing-amount" style="color:var(--clr-warm);">$50<span style="font-size:1rem;font-weight:400;color:rgba(245,237,224,0.6);">/mat</span></div>
+          <div style="font-size:0.82rem;color:rgba(245,237,224,0.7);margin-bottom:24px;">24"×36" · Rubber-backed · Personalized</div>
+          <ul class="pricing-features featured-features">
+            <li class="included"><i class="bi bi-check-lg"></i> Choice of 4 materials</li>
+            <li class="included"><i class="bi bi-check-lg"></i> 100+ color options</li>
+            <li class="included"><i class="bi bi-check-lg"></i> 20+ font choices</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Rubber anti-slip backing</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Custom text included</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Logo upload</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Digital proof review</li>
+            <li class="not-included"><i class="bi bi-x-lg"></i> Rush production</li>
+          </ul>
+          <a href="design-your-own.html" class="btn-warm w-100 mt-auto" style="background:#fff;color:var(--clr-primary);border-color:#fff;">Start Designing</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 animate-on-scroll">
+        <div class="pricing-card h-100">
+          <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-text-muted);margin-bottom:8px;">Premium</div>
+          <div class="pricing-amount">$78<span style="font-size:1rem;font-weight:400;color:var(--clr-text-muted);">/mat</span></div>
+          <div style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:24px;">24"×48" · Plush · Luxury Finish</div>
+          <ul class="pricing-features">
+            <li class="included"><i class="bi bi-check-lg"></i> Plush / luxury material</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Unlimited colors</li>
+            <li class="included"><i class="bi bi-check-lg"></i> All 20+ font choices</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Premium beveled backing</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Custom text & logo</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Digital proof + 2 revisions</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Priority 1-day production</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Express shipping included</li>
+          </ul>
+          <a href="design-your-own.html" class="btn-warm w-100 mt-auto">Start Designing</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bulk Plans (hidden by default) -->
+    <div id="bulkPlans" class="row g-4 justify-content-center" style="display:none !important;">
+      <div class="col-md-6 col-lg-3 animate-on-scroll">
+        <div class="pricing-card h-100 text-center">
+          <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-text-muted);margin-bottom:8px;">Starter</div>
+          <div class="pricing-amount">10%<span style="font-size:1rem;font-weight:400;color:var(--clr-text-muted);"> off</span></div>
+          <div style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:20px;">5–9 mats per order</div>
+          <ul class="pricing-features text-start">
+            <li class="included"><i class="bi bi-check-lg"></i> 10% volume discount</li>
+            <li class="included"><i class="bi bi-check-lg"></i> All materials available</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Logo printing</li>
+            <li class="not-included"><i class="bi bi-x-lg"></i> Account manager</li>
+          </ul>
+          <a href="bulk-orders.html" class="btn-warm-outline w-100 mt-auto">Get Quote</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 animate-on-scroll">
+        <div class="pricing-card featured h-100 text-center">
+          <div class="pricing-badge">Best Value</div>
+          <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-primary-light);margin-bottom:8px;">Business</div>
+          <div class="pricing-amount" style="color:var(--clr-warm);">20%<span style="font-size:1rem;font-weight:400;color:rgba(245,237,224,0.6);"> off</span></div>
+          <div style="font-size:0.82rem;color:rgba(245,237,224,0.7);margin-bottom:20px;">10–49 mats per order</div>
+          <ul class="pricing-features featured-features text-start">
+            <li class="included"><i class="bi bi-check-lg"></i> 20% volume discount</li>
+            <li class="included"><i class="bi bi-check-lg"></i> All materials</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Full logo branding</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Dedicated account manager</li>
+          </ul>
+          <a href="bulk-orders.html" class="btn-warm w-100 mt-auto" style="background:#fff;color:var(--clr-primary);">Get Quote</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 animate-on-scroll">
+        <div class="pricing-card h-100 text-center">
+          <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-text-muted);margin-bottom:8px;">Enterprise</div>
+          <div class="pricing-amount">25%<span style="font-size:1rem;font-weight:400;color:var(--clr-text-muted);"> off</span></div>
+          <div style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:20px;">50–99 mats per order</div>
+          <ul class="pricing-features text-start">
+            <li class="included"><i class="bi bi-check-lg"></i> 25% volume discount</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Pantone color matching</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Multi-location delivery</li>
+            <li class="included"><i class="bi bi-check-lg"></i> Priority account manager</li>
+          </ul>
+          <a href="bulk-orders.html" class="btn-warm-outline w-100 mt-auto">Get Quote</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 animate-on-scroll">
+        <div class="pricing-card h-100 text-center" style="background:linear-gradient(135deg,var(--clr-secondary),#3A2418);border-color:rgba(201,123,75,0.3);">
+          <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-primary-light);margin-bottom:8px;">Franchise</div>
+          <div class="pricing-amount" style="color:var(--clr-warm);">30%<span style="font-size:1rem;font-weight:400;color:rgba(245,237,224,0.6);"> off</span></div>
+          <div style="font-size:0.82rem;color:rgba(245,237,224,0.7);margin-bottom:20px;">100+ mats per order</div>
+          <ul class="pricing-features text-start" style="--checked-color:var(--clr-primary-light);">
+            <li class="included" style="color:rgba(245,237,224,0.85);"><i class="bi bi-check-lg" style="color:var(--clr-primary-light);"></i> 30% volume discount</li>
+            <li class="included" style="color:rgba(245,237,224,0.85);"><i class="bi bi-check-lg" style="color:var(--clr-primary-light);"></i> Custom color matching</li>
+            <li class="included" style="color:rgba(245,237,224,0.85);"><i class="bi bi-check-lg" style="color:var(--clr-primary-light);"></i> Nationwide shipping</li>
+            <li class="included" style="color:rgba(245,237,224,0.85);"><i class="bi bi-check-lg" style="color:var(--clr-primary-light);"></i> Executive account team</li>
+          </ul>
+          <a href="bulk-orders.html" class="btn-warm w-100 mt-auto">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PRICING TABLE — Feature Comparison -->
+<section class="section-pad bg-warm" aria-labelledby="compare-table-title">
+  <div class="container">
+    <div class="text-center mb-5 animate-on-scroll">
+      <div class="section-badge mx-auto d-inline-flex"><i class="bi bi-table"></i> Compare Features</div>
+      <h2 class="section-title mt-2" id="compare-table-title">Full Feature <em>Comparison</em></h2>
+    </div>
+    <div class="table-responsive animate-on-scroll">
+      <table class="table pricing-table">
+        <thead>
+          <tr>
+            <th style="width:35%;">Feature</th>
+            <th class="text-center">Essentials</th>
+            <th class="text-center" style="background:rgba(201,123,75,0.08);border-top:3px solid var(--clr-primary);">Signature <i class="bi bi-star-fill" style="color:var(--clr-primary);font-size:0.8em;"></i></th>
+            <th class="text-center">Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Starting price</td><td class="text-center">$28</td><td class="text-center" style="background:rgba(201,123,75,0.04);">$50</td><td class="text-center">$78</td></tr>
+          <tr><td>Default size</td><td class="text-center">18"×30"</td><td class="text-center" style="background:rgba(201,123,75,0.04);">24"×36"</td><td class="text-center">24"×48"</td></tr>
+          <tr><td>Material options</td><td class="text-center">Coir only</td><td class="text-center" style="background:rgba(201,123,75,0.04);">4 materials</td><td class="text-center">All materials</td></tr>
+          <tr><td>Color options</td><td class="text-center">5 colors</td><td class="text-center" style="background:rgba(201,123,75,0.04);">100+ colors</td><td class="text-center">Unlimited</td></tr>
+          <tr><td>Font choices</td><td class="text-center">3 fonts</td><td class="text-center" style="background:rgba(201,123,75,0.04);">20+ fonts</td><td class="text-center">All fonts</td></tr>
+          <tr><td>Custom text</td><td class="text-center">+$12</td><td class="text-center" style="background:rgba(201,123,75,0.04);"><i class="bi bi-check-circle-fill text-primary-warm"></i></td><td class="text-center"><i class="bi bi-check-circle-fill text-primary-warm"></i></td></tr>
+          <tr><td>Logo upload</td><td class="text-center"><i class="bi bi-x-circle text-danger"></i></td><td class="text-center" style="background:rgba(201,123,75,0.04);"><i class="bi bi-check-circle-fill text-primary-warm"></i></td><td class="text-center"><i class="bi bi-check-circle-fill text-primary-warm"></i></td></tr>
+          <tr><td>Digital proof</td><td class="text-center"><i class="bi bi-x-circle text-danger"></i></td><td class="text-center" style="background:rgba(201,123,75,0.04);"><i class="bi bi-check-circle-fill text-primary-warm"></i></td><td class="text-center"><i class="bi bi-check-circle-fill text-primary-warm"></i></td></tr>
+          <tr><td>Revisions</td><td class="text-center">—</td><td class="text-center" style="background:rgba(201,123,75,0.04);">1 free</td><td class="text-center">2 free</td></tr>
+          <tr><td>Priority production</td><td class="text-center"><i class="bi bi-x-circle text-danger"></i></td><td class="text-center" style="background:rgba(201,123,75,0.04);"><i class="bi bi-x-circle text-danger"></i></td><td class="text-center"><i class="bi bi-check-circle-fill text-primary-warm"></i></td></tr>
+          <tr><td>Express shipping</td><td class="text-center">+$18.95</td><td class="text-center" style="background:rgba(201,123,75,0.04);">+$18.95</td><td class="text-center"><i class="bi bi-check-circle-fill text-primary-warm"></i> Included</td></tr>
+          <tr><td>Non-slip backing</td><td class="text-center">Standard</td><td class="text-center" style="background:rgba(201,123,75,0.04);">Heavy-duty rubber</td><td class="text-center">Premium beveled</td></tr>
+          <tr><td>Warranty</td><td class="text-center">30 days</td><td class="text-center" style="background:rgba(201,123,75,0.04);">30 days</td><td class="text-center">60 days</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ADD-ONS -->
+<section class="section-pad" aria-labelledby="addons-title">
+  <div class="container">
+    <div class="text-center mb-5 animate-on-scroll">
+      <div class="section-badge mx-auto d-inline-flex"><i class="bi bi-plus-circle"></i> Add-Ons</div>
+      <h2 class="section-title mt-2" id="addons-title">Enhance Your <em>Order</em></h2>
+      <p class="section-subtitle mx-auto">Add these optional upgrades to any mat order at checkout.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3 animate-on-scroll"><div class="card-warm p-4 text-center h-100"><i class="bi bi-fonts text-primary-warm" style="font-size:2rem;display:block;margin-bottom:14px;"></i><h4 style="font-size:0.95rem;">Custom Text</h4><p style="font-size:0.85rem;">Add your name, message, or monogram up to 30 characters.</p><div style="font-family:var(--ff-display);font-size:1.5rem;font-weight:700;color:var(--clr-primary);">+$12</div></div></div>
+      <div class="col-sm-6 col-lg-3 animate-on-scroll"><div class="card-warm p-4 text-center h-100"><i class="bi bi-image text-primary-warm" style="font-size:2rem;display:block;margin-bottom:14px;"></i><h4 style="font-size:0.95rem;">Logo Upload</h4><p style="font-size:0.85rem;">Upload your custom logo or artwork for full-color printing.</p><div style="font-family:var(--ff-display);font-size:1.5rem;font-weight:700;color:var(--clr-primary);">+$18</div></div></div>
+      <div class="col-sm-6 col-lg-3 animate-on-scroll"><div class="card-warm p-4 text-center h-100"><i class="bi bi-lightning-charge text-primary-warm" style="font-size:2rem;display:block;margin-bottom:14px;"></i><h4 style="font-size:0.95rem;">Rush Production</h4><p style="font-size:0.85rem;">Need it fast? Rush to 1-day production — perfect for last-minute gifts.</p><div style="font-family:var(--ff-display);font-size:1.5rem;font-weight:700;color:var(--clr-primary);">+$24</div></div></div>
+      <div class="col-sm-6 col-lg-3 animate-on-scroll"><div class="card-warm p-4 text-center h-100"><i class="bi bi-gift text-primary-warm" style="font-size:2rem;display:block;margin-bottom:14px;"></i><h4 style="font-size:0.95rem;">Gift Packaging</h4><p style="font-size:0.85rem;">Premium gift box with ribbon, tissue paper, and a handwritten card.</p><div style="font-family:var(--ff-display);font-size:1.5rem;font-weight:700;color:var(--clr-primary);">+$8</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. GUARANTEES -->
+<section class="section-pad bg-warm" aria-labelledby="pricing-guarantee-title">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 animate-on-scroll">
+        <div class="section-badge"><i class="bi bi-shield-check"></i> Our Guarantee</div>
+        <h2 class="section-title mt-2" id="pricing-guarantee-title">Every Price Comes with <em>Our Promise</em></h2>
+        <p class="section-subtitle mb-4">Transparent pricing is only part of the story. Our quality guarantee ensures your investment is always protected.</p>
+        <div class="d-flex flex-column gap-4">
+          <div class="d-flex gap-4 align-items-start"><div class="feature-icon-wrap warm flex-shrink-0"><i class="bi bi-shield-check"></i></div><div><h4 style="font-size:1rem;">30-Day Quality Guarantee</h4><p style="font-size:0.88rem;margin:0;">If your mat has any manufacturing defects or color issues, we'll remake it for free — no questions asked.</p></div></div>
+          <div class="d-flex gap-4 align-items-start"><div class="feature-icon-wrap warm flex-shrink-0"><i class="bi bi-arrow-repeat"></i></div><div><h4 style="font-size:1rem;">Free Revisions Before Production</h4><p style="font-size:0.88rem;margin:0;">After ordering, our design team creates a digital proof. Request as many changes as you need before we produce.</p></div></div>
+          <div class="d-flex gap-4 align-items-start"><div class="feature-icon-wrap warm flex-shrink-0"><i class="bi bi-eye"></i></div><div><h4 style="font-size:1rem;">Digital Proof Before Printing</h4><p style="font-size:0.88rem;margin:0;">See exactly what your mat will look like — fonts, colors, layout — before a single thread is printed. No surprises.</p></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 animate-on-scroll slide-right">
+        <img src="https://images.pexels.com/photos/39964757/pexels-photo-39964757.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blue doormat with shoes by a rustic wooden door" loading="lazy" style="width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PRICING FAQ -->
+<section class="section-pad" aria-labelledby="pricing-faq-title">
+  <div class="container">
+    <div class="text-center mb-5 animate-on-scroll">
+      <div class="section-badge mx-auto d-inline-flex"><i class="bi bi-question-circle"></i> Pricing FAQ</div>
+      <h2 class="section-title mt-2" id="pricing-faq-title">Got Pricing <em>Questions?</em></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6 animate-on-scroll">
+        <div class="accordion faq-accordion" id="priceFAQ">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pFaq1">Are there any hidden fees?</button></h3><div id="pFaq1" class="accordion-collapse collapse show" data-bs-parent="#priceFAQ"><div class="accordion-body">Absolutely not. The price you see is the price you pay. Shipping is calculated at checkout (free over $60). Custom text and logo are listed as transparent add-ons. No surprise fees.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pFaq2">Do you offer discounts for first-time buyers?</button></h3><div id="pFaq2" class="accordion-collapse collapse" data-bs-parent="#priceFAQ"><div class="accordion-body">Yes! Sign up for our newsletter and receive a 10% discount code for your first order. You can also follow us on Instagram for flash sale announcements throughout the year.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pFaq3">Can I order a custom size not listed?</button></h3><div id="pFaq3" class="accordion-collapse collapse" data-bs-parent="#priceFAQ"><div class="accordion-body">Absolutely. We cut mats to any dimension up to 6 feet wide. Custom sizes are priced based on area — contact us with your exact measurements and we'll quote within 24 hours.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pFaq4">What payment methods do you accept?</button></h3><div id="pFaq4" class="accordion-collapse collapse" data-bs-parent="#priceFAQ"><div class="accordion-body">We accept all major credit cards (Visa, Mastercard, Amex), PayPal, Apple Pay, Google Pay, and bank transfers for large business orders. All payments are processed securely via Stripe.</div></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 animate-on-scroll slide-right">
+        <div class="accordion faq-accordion" id="priceFAQ2">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pFaq5">Is there a minimum order for bulk pricing?</button></h3><div id="pFaq5" class="accordion-collapse collapse show" data-bs-parent="#priceFAQ2"><div class="accordion-body">Bulk discounts start at just 5 mats. There's no maximum. The more you order, the higher your discount — from 10% (5–9 mats) all the way up to 30% (100+ mats).</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pFaq6">Do prices include shipping?</button></h3><div id="pFaq6" class="accordion-collapse collapse" data-bs-parent="#priceFAQ2"><div class="accordion-body">Shipping is calculated separately. Orders over $60 ship free via standard 5–7 day delivery. Express shipping (2–3 days) is available for $18.95. Premium plan includes express shipping.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pFaq7">Can I get a quote without committing?</button></h3><div id="pFaq7" class="accordion-collapse collapse" data-bs-parent="#priceFAQ2"><div class="accordion-body">Of course. Use our Design Studio to configure your mat and see live pricing before checkout. For bulk orders, submit an enquiry and receive a formal quote — zero obligation to proceed.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CTA -->
+<section class="section-pad" style="background:linear-gradient(135deg,var(--clr-secondary),#3A2418);" aria-label="Pricing CTA">
+  <div class="container text-center animate-on-scroll">
+    <div class="section-badge mx-auto d-inline-flex" style="background:rgba(201,123,75,0.2);border-color:rgba(201,123,75,0.4);color:var(--clr-primary-light);"><i class="bi bi-stars"></i> Ready to Order?</div>
+    <h2 class="section-title mt-3 mb-3" style="color:var(--clr-warm);">Create Your Perfect Mat <em style="color:var(--clr-primary-light);">Today</em></h2>
+    <p style="color:rgba(245,237,224,0.75);max-width:500px;margin:0 auto 32px;font-size:1rem;">Start with our free design studio, get a digital proof, and receive your custom mat in days — backed by our quality guarantee.</p>
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+      <a href="design-your-own.html" class="btn-warm" style="font-size:1rem;padding:16px 36px;"><i class="bi bi-palette2"></i> Start Designing — Free</a>
+      <a href="bulk-orders.html" class="btn-warm-outline" style="color:var(--clr-warm);border-color:rgba(245,237,224,0.4);font-size:1rem;padding:16px 36px;"><i class="bi bi-boxes"></i> Bulk Order Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-warm section-pad" aria-label="Site footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <a class="navbar-brand footer-logo mb-4 d-inline-flex text-decoration-none" href="index.html">
+          <div class="brand-icon me-2" aria-hidden="true"><i class="bi bi-house-heart-fill"></i></div>
+          <div class="brand-text"><span class="brand-name">DoorMat Studio</span><span class="brand-tagline">Crafted With Care</span></div>
+        </a>
+        <p style="color:rgba(245,237,224,0.65);font-size:0.92rem;line-height:1.8;max-width:320px;">Premium custom doormats & personalized welcome mats for homes, offices, hotels, and businesses. Every entrance deserves a beautiful beginning.</p>
+        <div class="social-links mt-4">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="bi bi-chevron-right"></i>Home</a></li>
+          <li><a href="home2.html"><i class="bi bi-chevron-right"></i>Home 2</a></li>
+          <li><a href="about.html"><i class="bi bi-chevron-right"></i>About Us</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Services</a></li>
+          <li><a href="blog.html"><i class="bi bi-chevron-right"></i>Blog</a></li>
+          <li><a href="pricing.html"><i class="bi bi-chevron-right"></i>Pricing</a></li>
+          <li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Our Services</h6>
+        <ul class="footer-links">
+          <li><a href="design-your-own.html"><i class="bi bi-chevron-right"></i>Design Your Own</a></li>
+          <li><a href="bulk-orders.html"><i class="bi bi-chevron-right"></i>Bulk Orders</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Home Mats</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Office Mats</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Hotel Mats</a></li>
+          <li><a href="services.html"><i class="bi bi-chevron-right"></i>Event Mats</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6>Stay Inspired</h6>
+        <p style="color:rgba(245,237,224,0.65);font-size:0.9rem;margin-bottom:16px;">Get new designs, exclusive offers, and home styling tips.</p>
+        <form class="d-flex gap-2 mb-3" data-validate>
+          <input type="email" class="form-control" placeholder="Enter your email" required style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:var(--clr-warm);" aria-label="Email for newsletter" />
+          <button class="btn-warm" type="submit" style="padding:11px 20px;white-space:nowrap;font-size:0.85rem;">Subscribe</button>
+        </form>
+        <p style="color:rgba(245,237,224,0.4);font-size:0.78rem;">No spam, ever. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <p>© 2026 DoorMat Studio. All rights reserved.</p>
+      <div class="d-flex gap-3 flex-wrap">
+        <a href="#" style="color:rgba(245,237,224,0.5);font-size:0.82rem;">Privacy Policy</a>
+        <a href="#" style="color:rgba(245,237,224,0.5);font-size:0.82rem;">Terms of Service</a>
+        <a href="#" style="color:rgba(245,237,224,0.5);font-size:0.82rem;">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner"><div class="container d-flex flex-wrap align-items-center justify-content-between gap-3"><div class="d-flex align-items-center gap-3"><i class="bi bi-cookie" style="font-size:1.5rem;color:var(--clr-primary-light);"></i><p style="margin:0;font-size:0.88rem;color:rgba(245,237,224,0.85);">We use cookies to enhance your experience.</p></div><button class="btn-warm" style="padding:10px 22px;font-size:0.85rem;" data-accept-cookies>Got it!</button></div></div>
+<button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+// Pricing toggle
+const toggle = document.getElementById('pricingToggle');
+const single = document.getElementById('singlePlans');
+const bulk = document.getElementById('bulkPlans');
+let isBulk = false;
+
+toggle.addEventListener('click', () => {
+  isBulk = !isBulk;
+  toggle.setAttribute('aria-checked', isBulk.toString());
+  toggle.classList.toggle('active', isBulk);
+  if (isBulk) {
+    single.style.display = 'none';
+    bulk.style.removeProperty('display');
+    document.getElementById('toggleLabelSingle').style.fontWeight = '400';
+    document.getElementById('toggleLabelSingle').style.color = 'var(--clr-text-muted)';
+    document.getElementById('toggleLabelBulk').style.fontWeight = '700';
+    document.getElementById('toggleLabelBulk').style.color = 'var(--clr-primary)';
+  } else {
+    single.style.display = '';
+    bulk.style.display = 'none';
+    document.getElementById('toggleLabelSingle').style.fontWeight = '700';
+    document.getElementById('toggleLabelSingle').style.color = 'var(--clr-primary)';
+    document.getElementById('toggleLabelBulk').style.fontWeight = '400';
+    document.getElementById('toggleLabelBulk').style.color = '';
+  }
+});
+</script>
+</body>
+</html>

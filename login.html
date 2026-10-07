@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in or create your DoorMat Studio account to track orders, save designs, and access exclusive member discounts." />
+  <title>Login / Register | DoorMat Studio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C97B4B'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23FFF8F0' font-family='Georgia,serif' font-weight='bold'>D</text></svg>" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .auth-split { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 991px) { .auth-split { grid-template-columns: 1fr; } .auth-visual { display: none !important; } }
+    .auth-visual { position: relative; background: linear-gradient(145deg,#2D1B10 0%,#4A3728 60%,#3A2010 100%); overflow: hidden; }
+    .auth-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.25; }
+    .auth-content { display: flex; flex-direction: column; justify-content: center; padding: clamp(32px,6vw,80px); background: var(--clr-white); }
+    .tab-auth { display: flex; background: var(--clr-warm); border-radius: var(--radius-pill); padding: 4px; gap: 4px; margin-bottom: 28px; }
+    .tab-auth-btn { flex: 1; border: none; background: transparent; padding: 11px 20px; border-radius: var(--radius-pill); font-weight: 600; font-size: 0.9rem; color: var(--clr-text-muted); cursor: pointer; transition: var(--transition-fast); }
+    .tab-auth-btn.active { background: var(--clr-white); color: var(--clr-text); box-shadow: var(--shadow-sm); }
+    .social-auth-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; border: 2px solid var(--clr-border); border-radius: var(--radius-md); background: transparent; font-size: 0.9rem; font-weight: 600; color: var(--clr-text); cursor: pointer; transition: var(--transition-fast); }
+    .social-auth-btn:hover { border-color: var(--clr-primary); background: var(--clr-warm); }
+    .password-strength { height: 4px; border-radius: 2px; background: var(--clr-border); margin-top: 8px; overflow: hidden; }
+    .password-strength-bar { height: 100%; width: 0; border-radius: 2px; transition: width 0.4s ease, background 0.4s ease; }
+    .divider-text { display: flex; align-items: center; gap: 12px; color: var(--clr-text-muted); font-size: 0.82rem; margin: 20px 0; }
+    .divider-text::before, .divider-text::after { content: ''; flex: 1; height: 1px; background: var(--clr-border); }
+    .member-perk { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+    .perk-icon { width: 36px; height: 36px; background: rgba(201,123,75,0.12); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--clr-primary); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+<!-- MINIMAL NAV -->
+<nav class="navbar-warm" style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:var(--clr-white);border-bottom:1px solid var(--clr-border);" id="mainNavbar">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="navbar-brand" href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:10px;"><div class="brand-icon"><i class="bi bi-house-heart-fill"></i></div><div class="brand-text"><span class="brand-name">DoorMat Studio</span><span class="brand-tagline">Crafted With Care</span></div></a>
+    <div class="d-flex align-items-center gap-3">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- AUTH SPLIT LAYOUT -->
+<div class="auth-split" style="padding-top:70px;">
+
+  <!-- LEFT: Visual Panel -->
+  <div class="auth-visual">
+    <img src="https://images.pexels.com/photos/28446689/pexels-photo-28446689.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Natural brown and golden mat fibers in close-up" loading="lazy" />
+    <!-- Decorative gradient overlay -->
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(45,27,16,0.4),rgba(45,27,16,0.7));"></div>
+    <!-- Content -->
+    <div style="position:relative;z-index:2;padding:48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;">
+      <div>
+        <div class="section-badge" style="background:rgba(201,123,75,0.2);border-color:rgba(201,123,75,0.4);color:var(--clr-primary-light);display:inline-flex;"><i class="bi bi-person-heart"></i> Member Benefits</div>
+        <h2 style="color:#F5EDE0;font-size:2rem;margin-top:20px;margin-bottom:8px;font-family:var(--ff-display);">Join 12,000+<br /><em style="color:var(--clr-primary-light);">Happy Mat Owners</em></h2>
+        <p style="color:rgba(245,237,224,0.75);font-size:0.95rem;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.8;">Create your free account and unlock exclusive member perks, order tracking, and saved designs.</p>
+      </div>
+      <!-- Perks list -->
+      <div style="max-width:400px;margin:0 auto;text-align:left;">
+        <div class="member-perk"><div class="perk-icon"><i class="bi bi-bag-heart-fill"></i></div><div><div style="font-weight:700;font-size:0.9rem;color:var(--clr-warm);">Save Your Designs</div><p style="font-size:0.82rem;color:rgba(245,237,224,0.65);margin:0;">Keep all your custom mat creations in one place and reorder anytime.</p></div></div>
+        <div class="member-perk"><div class="perk-icon"><i class="bi bi-truck"></i></div><div><div style="font-weight:700;font-size:0.9rem;color:var(--clr-warm);">Order Tracking</div><p style="font-size:0.82rem;color:rgba(245,237,224,0.65);margin:0;">Track every order from production to your doorstep in real-time.</p></div></div>
+        <div class="member-perk" style="margin-bottom:0;"><div class="perk-icon"><i class="bi bi-gift-fill"></i></div><div><div style="font-weight:700;font-size:0.9rem;color:var(--clr-warm);">Member Discounts</div><p style="font-size:0.82rem;color:rgba(245,237,224,0.65);margin:0;">10% off your first order and access to flash sales exclusive to members.</p></div></div>
+      </div>
+      <!-- Trust badges -->
+      <div class="d-flex gap-3 flex-wrap justify-content-center" style="font-size:0.78rem;color:rgba(245,237,224,0.55);">
+        <span><i class="bi bi-shield-lock-fill me-1" style="color:var(--clr-primary-light);"></i>SSL Secured</span>
+        <span><i class="bi bi-lock-fill me-1" style="color:var(--clr-primary-light);"></i>Data Protected</span>
+        <span><i class="bi bi-check-circle-fill me-1" style="color:var(--clr-primary-light);"></i>No Spam Ever</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Auth Forms -->
+  <div class="auth-content">
+    <div style="max-width:440px;width:100%;margin:0 auto;">
+
+      <!-- Tab Toggle -->
+      <div class="tab-auth" role="tablist">
+        <button class="tab-auth-btn active" id="loginTab" role="tab" aria-selected="true" aria-controls="loginPanel" onclick="switchTab('login')">Sign In</button>
+        <button class="tab-auth-btn" id="registerTab" role="tab" aria-selected="false" aria-controls="registerPanel" onclick="switchTab('register')">Create Account</button>
+      </div>
+
+      <!-- LOGIN PANEL -->
+      <div id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
+        <h1 style="font-size:1.8rem;margin-bottom:4px;">Welcome Back<span style="color:var(--clr-primary);">.</span></h1>
+        <p style="color:var(--clr-text-muted);font-size:0.9rem;margin-bottom:24px;">Sign in to your DoorMat Studio account.</p>
+
+        <!-- Social Login -->
+        <div class="d-flex flex-column gap-2 mb-2">
+          <button class="social-auth-btn flex-fill" aria-label="Continue with Google"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Continue with Google</button>
+          <button class="social-auth-btn flex-fill" aria-label="Continue with Apple"><i class="bi bi-apple" style="font-size:1.2rem;"></i> Continue with Apple</button>
+        </div>
+
+        <div class="divider-text">or sign in with email</div>
+
+        <form class="form-warm" data-validate id="loginForm">
+          <div class="mb-3">
+            <label class="form-label" for="loginEmail">Email Address</label>
+            <div style="position:relative;"><i class="bi bi-envelope" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--clr-text-muted);font-size:0.9rem;"></i><input type="email" class="form-control" id="loginEmail" placeholder="your@email.com" required style="padding-left:40px;" /></div>
+          </div>
+          <div class="mb-2">
+            <label class="form-label" for="loginPassword">Password</label>
+            <div style="position:relative;"><i class="bi bi-lock" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--clr-text-muted);font-size:0.9rem;"></i><input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required style="padding-left:40px;padding-right:44px;" /><button type="button" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--clr-text-muted);cursor:pointer;" onclick="togglePwd('loginPassword',this)" aria-label="Toggle password visibility"><i class="bi bi-eye"></i></button></div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-4" style="font-size:0.85rem;">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;color:var(--clr-text-muted);"><input type="checkbox" style="accent-color:var(--clr-primary);" /> Remember me</label>
+            <a href="#" style="color:var(--clr-primary);text-decoration:none;font-weight:600;" onclick="showForgot()">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-warm" style="font-size:1rem;padding:14px 48px;display:flex;width:fit-content;min-width:240px;margin-left:auto;margin-right:auto;justify-content:center;"><i class="bi bi-box-arrow-in-right me-2"></i>Sign In</button>
+          <a href="index.html" class="btn-warm-outline w-100 mt-2" style="font-size:0.95rem;padding:13px;"><i class="bi bi-house-heart me-2"></i>Browse as Guest</a>
+        </form>
+        <div id="forgotSection" style="display:none;margin-top:20px;padding:20px;background:var(--clr-warm);border-radius:var(--radius-md);border:1px solid var(--clr-border);">
+          <h4 style="font-size:0.95rem;margin-bottom:8px;"><i class="bi bi-lock-fill text-primary-warm me-2"></i>Reset Password</h4>
+          <p style="font-size:0.85rem;color:var(--clr-text-muted);margin-bottom:12px;">Enter your email and we'll send a reset link within 5 minutes.</p>
+          <form class="form-warm d-flex gap-2" data-validate>
+            <input type="email" class="form-control" placeholder="your@email.com" required style="flex:1;" />
+            <button type="submit" class="btn-warm" style="padding:11px 18px;white-space:nowrap;font-size:0.85rem;">Send</button>
+          </form>
+        </div>
+        <p style="text-align:center;margin-top:24px;font-size:0.88rem;color:var(--clr-text-muted);">Don't have an account? <a href="#" style="color:var(--clr-primary);font-weight:700;text-decoration:none;" onclick="switchTab('register')">Create one free →</a></p>
+      </div>
+
+      <!-- REGISTER PANEL -->
+      <div id="registerPanel" role="tabpanel" aria-labelledby="registerTab" style="display:none;">
+        <h2 style="font-size:1.8rem;margin-bottom:4px;">Create Account<span style="color:var(--clr-primary);">.</span></h2>
+        <p style="color:var(--clr-text-muted);font-size:0.9rem;margin-bottom:24px;">Join free and get <strong style="color:var(--clr-primary);">10% off</strong> your first order.</p>
+
+        <!-- Social Signup -->
+        <div class="d-flex flex-column gap-2 mb-2">
+          <button class="social-auth-btn flex-fill" aria-label="Sign up with Google"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Sign up with Google</button>
+          <button class="social-auth-btn flex-fill" aria-label="Sign up with Apple"><i class="bi bi-apple" style="font-size:1.2rem;"></i> Sign up with Apple</button>
+        </div>
+
+        <div class="divider-text">or register with email</div>
+
+        <form class="form-warm" data-validate id="registerForm">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label class="form-label" for="regFirstName">First Name *</label>
+              <input type="text" class="form-control" id="regFirstName" placeholder="John" required />
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="regLastName">Last Name *</label>
+              <input type="text" class="form-control" id="regLastName" placeholder="Doe" required />
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="regEmail">Email Address *</label>
+              <div style="position:relative;"><i class="bi bi-envelope" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--clr-text-muted);font-size:0.9rem;"></i><input type="email" class="form-control" id="regEmail" placeholder="your@email.com" required style="padding-left:40px;" /></div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="regPassword">Password *</label>
+              <div style="position:relative;"><i class="bi bi-lock" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--clr-text-muted);font-size:0.9rem;"></i><input type="password" class="form-control" id="regPassword" placeholder="Create a strong password" required minlength="8" style="padding-left:40px;padding-right:44px;" oninput="checkPasswordStrength(this)" /><button type="button" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--clr-text-muted);cursor:pointer;" onclick="togglePwd('regPassword',this)" aria-label="Toggle password visibility"><i class="bi bi-eye"></i></button></div>
+              <div class="password-strength mt-2"><div class="password-strength-bar" id="strengthBar"></div></div>
+              <div style="font-size:0.75rem;color:var(--clr-text-muted);margin-top:4px;" id="strengthLabel">At least 8 characters required</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="regConfirm">Confirm Password *</label>
+              <div style="position:relative;"><i class="bi bi-lock-fill" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--clr-text-muted);font-size:0.9rem;"></i><input type="password" class="form-control" id="regConfirm" placeholder="Repeat your password" required minlength="8" style="padding-left:40px;" /></div>
+            </div>
+            <div class="col-12">
+              <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:0.85rem;color:var(--clr-text-muted);">
+                <input type="checkbox" required style="accent-color:var(--clr-primary);margin-top:2px;flex-shrink:0;" />
+                <span>I agree to the <a href="#" style="color:var(--clr-primary);font-weight:600;">Terms of Service</a> and <a href="#" style="color:var(--clr-primary);font-weight:600;">Privacy Policy</a></span>
+              </label>
+            </div>
+            <div class="col-12">
+              <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.85rem;color:var(--clr-text-muted);">
+                <input type="checkbox" style="accent-color:var(--clr-primary);" />
+                <span>Send me design tips and exclusive member offers (unsubscribe anytime)</span>
+              </label>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn-warm" style="font-size:1rem;padding:14px 48px;display:flex;width:fit-content;min-width:240px;margin-left:auto;margin-right:auto;justify-content:center;"><i class="bi bi-person-plus me-2"></i>Create My Free Account</button>
+              <a href="index.html" class="btn-warm-outline w-100 mt-2" style="font-size:0.95rem;padding:13px;"><i class="bi bi-house-heart me-2"></i>Browse as Guest</a>
+            </div>
+          </div>
+        </form>
+        <p style="text-align:center;margin-top:24px;font-size:0.88rem;color:var(--clr-text-muted);">Already have an account? <a href="#" style="color:var(--clr-primary);font-weight:700;text-decoration:none;" onclick="switchTab('login')">Sign in →</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+function switchTab(tab) {
+  const loginPanel = document.getElementById('loginPanel');
+  const registerPanel = document.getElementById('registerPanel');
+  const loginTab = document.getElementById('loginTab');
+  const registerTab = document.getElementById('registerTab');
+  if (tab === 'login') {
+    loginPanel.style.display = 'block';
+    registerPanel.style.display = 'none';
+    loginTab.classList.add('active');
+    registerTab.classList.remove('active');
+    loginTab.setAttribute('aria-selected', 'true');
+    registerTab.setAttribute('aria-selected', 'false');
+    document.getElementById('forgotSection').style.display = 'none';
+  } else {
+    loginPanel.style.display = 'none';
+    registerPanel.style.display = 'block';
+    loginTab.classList.remove('active');
+    registerTab.classList.add('active');
+    loginTab.setAttribute('aria-selected', 'false');
+    registerTab.setAttribute('aria-selected', 'true');
+  }
+}
+
+function showForgot() {
+  const el = document.getElementById('forgotSection');
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+function togglePwd(inputId, btn) {
+  const input = document.getElementById(inputId);
+  const icon = btn.querySelector('i');
+  if (input.type === 'password') { input.type = 'text'; icon.className = 'bi bi-eye-slash'; }
+  else { input.type = 'password'; icon.className = 'bi bi-eye'; }
+}
+
+function checkPasswordStrength(input) {
+  const val = input.value;
+  const bar = document.getElementById('strengthBar');
+  const label = document.getElementById('strengthLabel');
+  let score = 0;
+  if (val.length >= 8) score++;
+  if (/[A-Z]/.test(val)) score++;
+  if (/[0-9]/.test(val)) score++;
+  if (/[^A-Za-z0-9]/.test(val)) score++;
+  const widths = ['0%','25%','50%','75%','100%'];
+  const colors = ['','#E74C3C','#E67E22','#3498DB','#27AE60'];
+  const labels = ['At least 8 characters required','Weak — add uppercase letters','Fair — add numbers','Good — add special characters','Strong password'];
+  bar.style.width = widths[score];
+  bar.style.background = colors[score];
+  label.textContent = labels[score];
+  label.style.color = colors[score] || 'var(--clr-text-muted)';
+}
+
+// Social auth (Google / Apple, login + signup) — redirect to home page
+document.querySelectorAll('.social-auth-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var label = btn.getAttribute('aria-label') || 'Social sign-in';
+    btn.disabled = true;
+    btn.style.opacity = '0.65';
+    btn.style.pointerEvents = 'none';
+    window.showToast(label + ' — taking you home…', 'success');
+    setTimeout(function() { window.location.href = 'index.html'; }, 1200);
+  });
+});
+
+// Form submissions
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('[type="submit"]');
+  btn.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>Signing in…';
+  btn.disabled = true;
+  setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+});
+
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const pwd = document.getElementById('regPassword').value;
+  const conf = document.getElementById('regConfirm').value;
+  if (pwd !== conf) { window.showToast('Passwords do not match. Please try again.', 'error'); return; }
+  const btn = this.querySelector('[type="submit"]');
+  btn.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>Creating your account…';
+  btn.disabled = true;
+  setTimeout(() => { window.showToast('Welcome to DoorMat Studio! Check your email.', 'success'); window.location.href = 'index.html'; }, 1500);
+});
+</script>
+</body>
+</html>
