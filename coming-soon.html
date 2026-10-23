@@ -6,7 +6,7 @@
   <title>Coming Soon | DoorMat Studio</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C97B4B'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23FFF8F0' font-family='Georgia,serif' font-weight='bold'>D</text></svg>" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
@@ -18,15 +18,15 @@
     @keyframes drift { 0%{transform:translateY(100vh) rotate(0deg);opacity:0;} 10%{opacity:0.6;} 90%{opacity:0.4;} 100%{transform:translateY(-100px) rotate(720deg);opacity:0;} }
     .countdown-grid { display: flex; gap: clamp(12px, 3vw, 28px); justify-content: center; flex-wrap: wrap; }
     .countdown-unit { text-align: center; min-width: 80px; }
-    .countdown-number { font-family: var(--ff-display); font-size: clamp(2.8rem, 8vw, 5.5rem); font-weight: 800; color: var(--clr-warm); line-height: 1; margin-bottom: 6px; background: linear-gradient(135deg, #F5EDE0 0%, var(--clr-primary-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .countdown-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(245,237,224,0.45); font-weight: 700; }
+    .countdown-number { font-family: var(--ff-display); font-size: clamp(2.8rem, 8vw, 5.5rem); font-weight: 800; color:var(--clr-cream); line-height: 1; margin-bottom: 6px; background: linear-gradient(135deg, #F5EDE0 0%, var(--clr-primary-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .countdown-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(245,237,224,0.85); font-weight: 700; }
     .countdown-sep { font-family: var(--ff-display); font-size: clamp(2rem, 6vw, 4rem); font-weight: 700; color: rgba(201,123,75,0.4); line-height: 1.1; padding-top: 8px; animation: blink 1.2s step-end infinite; }
     @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
     .notify-form { display: flex; max-width: 480px; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: var(--radius-pill); overflow: hidden; backdrop-filter: blur(8px); }
-    .notify-form input { flex: 1; background: transparent; border: none; padding: 16px 22px; color: var(--clr-warm); font-size: 0.9rem; outline: none; }
-    .notify-form input::placeholder { color: rgba(245,237,224,0.4); }
-    .notify-form button { background: var(--clr-primary); border: none; padding: 16px 26px; color: #fff; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: var(--transition-fast); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
-    .notify-form button:hover { background: var(--clr-primary-dark); }
+    .notify-form input { flex: 1; background: transparent; border: none; padding: 16px 22px; color:var(--clr-cream); font-size: 0.9rem; outline: none; }
+    .notify-form input::placeholder { color: rgba(245,237,224,0.8); }
+    .notify-form button { background: var(--clr-primary-strong); border: none; padding: 16px 26px; color: #fff; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: var(--transition-fast); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+    .notify-form button:hover { background: var(--clr-primary-deep); }
     .progress-item { margin-bottom: 20px; }
     .progress-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; color: rgba(245,237,224,0.75); font-size: 0.85rem; font-weight: 600; }
     .progress-track { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
@@ -51,7 +51,7 @@
   <nav style="position:relative;z-index:10;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;">
     <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
       <div class="brand-icon"><i class="bi bi-house-heart-fill"></i></div>
-      <div class="brand-text"><span class="brand-name" style="color:var(--clr-warm);">DoorMat Studio</span><span class="brand-tagline" style="color:rgba(245,237,224,0.5);">Crafted With Care</span></div>
+      <div class="brand-text"><span class="brand-name" style="color:var(--clr-cream);">DoorMat Studio</span><span class="brand-tagline" style="color:rgba(245,237,224,0.85);">Crafted With Care</span></div>
     </a>
     <a href="index.html" style="color:rgba(245,237,224,0.6);font-size:0.85rem;text-decoration:none;display:flex;align-items:center;gap:6px;"><i class="bi bi-arrow-left"></i> Back to Site</a>
   </nav>
@@ -66,7 +66,7 @@
       </div>
 
       <!-- Headline -->
-      <h1 style="color:var(--clr-warm);font-size:clamp(2rem,5vw,3.8rem);line-height:1.15;margin-bottom:16px;">
+      <h1 style="color:var(--clr-cream);font-size:clamp(2rem,5vw,3.8rem);line-height:1.15;margin-bottom:16px;">
         We're Crafting Something <em style="color:var(--clr-primary-light);">Truly Special</em>
       </h1>
       <p style="color:rgba(245,237,224,0.65);font-size:1.05rem;max-width:540px;margin:0 auto 48px;line-height:1.9;">Our new collection of premium artisan doormats is launching soon. Be the first to know — and get <strong style="color:var(--clr-primary-light);">15% off</strong> your first order.</p>
@@ -95,12 +95,12 @@
           You're on the list! We'll notify you when we launch.
         </div>
       </div>
-      <p style="font-size:0.78rem;color:rgba(245,237,224,0.35);margin:0 0 20px;">Join 2,400 people already on the waitlist. No spam, ever.</p>
-      <div><a href="services.html" class="btn-warm-outline" style="color:#F5EDE0;border-color:rgba(245,237,224,0.4);font-size:0.9rem;padding:12px 28px;"><i class="bi bi-grid-3x3-gap"></i> Explore Our Mats</a></div>
+      <p style="font-size:0.78rem;color:rgba(245,237,224,0.8);margin:0 0 20px;">Join 2,400 people already on the waitlist. No spam, ever.</p>
+      <div><a href="services.html" class="btn-warm-outline btn-warm-outline-light btn-sm"><i class="bi bi-grid-3x3-gap"></i> Explore Our Mats</a></div>
 
       <!-- Social follow -->
       <div class="mt-5">
-        <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(245,237,224,0.35);margin-bottom:14px;font-weight:700;">Follow our launch journey</p>
+        <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(245,237,224,0.8);margin-bottom:14px;font-weight:700;">Follow our launch journey</p>
         <div class="social-row">
           <a href="#" class="social-cs" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
           <a href="#" class="social-cs" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -115,34 +115,34 @@
   <!-- SNEAK PEEK SECTION -->
   <section style="position:relative;z-index:5;padding:40px 0;border-top:1px solid rgba(255,255,255,0.06);" aria-labelledby="sneak-title">
     <div class="container">
-      <h2 id="sneak-title" style="text-align:center;color:rgba(245,237,224,0.45);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:700;font-family:var(--ff-body);margin-bottom:28px;">Sneak Peek — What's Coming</h2>
+      <h2 id="sneak-title" style="text-align:center;color:rgba(245,237,224,0.85);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:700;font-family:var(--ff-body);margin-bottom:28px;">Sneak Peek — What's Coming</h2>
       <div class="row g-3 justify-content-center">
         <div class="col-6 col-md-3">
           <div class="sneak-peek-card">
             <i class="bi bi-brush" style="font-size:2rem;color:var(--clr-primary-light);margin-bottom:12px;display:block;"></i>
-            <div style="color:var(--clr-warm);font-weight:700;font-size:0.9rem;margin-bottom:4px;">AI Design Studio</div>
-            <div style="color:rgba(245,237,224,0.45);font-size:0.78rem;">Generate mat designs with AI</div>
+            <div style="color:var(--clr-cream);font-weight:700;font-size:0.9rem;margin-bottom:4px;">AI Design Studio</div>
+            <div style="color:rgba(245,237,224,0.85);font-size:0.78rem;">Generate mat designs with AI</div>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="sneak-peek-card">
             <i class="bi bi-box-seam" style="font-size:2rem;color:var(--clr-primary-light);margin-bottom:12px;display:block;"></i>
-            <div style="color:var(--clr-warm);font-weight:700;font-size:0.9rem;margin-bottom:4px;">Artisan Collection</div>
-            <div style="color:rgba(245,237,224,0.45);font-size:0.78rem;">Hand-woven premium mats</div>
+            <div style="color:var(--clr-cream);font-weight:700;font-size:0.9rem;margin-bottom:4px;">Artisan Collection</div>
+            <div style="color:rgba(245,237,224,0.85);font-size:0.78rem;">Hand-woven premium mats</div>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="sneak-peek-card">
             <i class="bi bi-phone" style="font-size:2rem;color:var(--clr-primary-light);margin-bottom:12px;display:block;"></i>
-            <div style="color:var(--clr-warm);font-weight:700;font-size:0.9rem;margin-bottom:4px;">Mobile App</div>
-            <div style="color:rgba(245,237,224,0.45);font-size:0.78rem;">Design on the go — iOS & Android</div>
+            <div style="color:var(--clr-cream);font-weight:700;font-size:0.9rem;margin-bottom:4px;">Mobile App</div>
+            <div style="color:rgba(245,237,224,0.85);font-size:0.78rem;">Design on the go — iOS & Android</div>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="sneak-peek-card">
             <i class="bi bi-stars" style="font-size:2rem;color:var(--clr-primary-light);margin-bottom:12px;display:block;"></i>
-            <div style="color:var(--clr-warm);font-weight:700;font-size:0.9rem;margin-bottom:4px;">Loyalty Program</div>
-            <div style="color:rgba(245,237,224,0.45);font-size:0.78rem;">Earn rewards on every order</div>
+            <div style="color:var(--clr-cream);font-weight:700;font-size:0.9rem;margin-bottom:4px;">Loyalty Program</div>
+            <div style="color:rgba(245,237,224,0.85);font-size:0.78rem;">Earn rewards on every order</div>
           </div>
         </div>
       </div>
@@ -150,7 +150,7 @@
       <!-- Progress Bars -->
       <div class="row justify-content-center mt-5">
         <div class="col-lg-7">
-          <h3 style="color:rgba(245,237,224,0.4);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:700;font-family:var(--ff-body);margin-bottom:20px;text-align:center;">Development Progress</h3>
+          <h3 style="color:rgba(245,237,224,0.8);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:700;font-family:var(--ff-body);margin-bottom:20px;text-align:center;">Development Progress</h3>
           <div class="progress-item">
             <div class="progress-label"><span>Design Studio</span><span>92%</span></div>
             <div class="progress-track"><div class="progress-fill" style="--target-width:92%;animation-delay:0.2s;"></div></div>
@@ -174,10 +174,10 @@
 
   <!-- Footer strip -->
   <div style="position:relative;z-index:5;padding:20px 32px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-    <p style="color:rgba(245,237,224,0.3);font-size:0.8rem;margin:0;">© 2026 DoorMat Studio. All rights reserved.</p>
+    <p style="color:rgba(245,237,224,0.8);font-size:0.8rem;margin:0;">© 2026 DoorMat Studio. All rights reserved.</p>
     <div style="display:flex;gap:16px;">
-      <a href="index.html" style="color:rgba(245,237,224,0.3);font-size:0.8rem;text-decoration:none;">Home</a>
-      <a href="contact.html" style="color:rgba(245,237,224,0.3);font-size:0.8rem;text-decoration:none;">Contact</a>
+      <a href="index.html" style="color:rgba(245,237,224,0.8);font-size:0.8rem;text-decoration:none;">Home</a>
+      <a href="contact.html" style="color:rgba(245,237,224,0.8);font-size:0.8rem;text-decoration:none;">Contact</a>
     </div>
   </div>
 </div>

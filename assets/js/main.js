@@ -36,6 +36,8 @@ function updateThemeIcon(theme) {
     if (icon) {
       icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
     }
+    btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
   });
 }
 
@@ -169,8 +171,12 @@ function initProductFilter() {
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
       const filter = btn.dataset.filter;
 

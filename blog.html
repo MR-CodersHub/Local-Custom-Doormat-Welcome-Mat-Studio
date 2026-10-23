@@ -6,12 +6,12 @@
   <title>Blog | DoorMat Studio</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C97B4B'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23FFF8F0' font-family='Georgia,serif' font-weight='bold'>D</text></svg>" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-<div id="preloader"><div class="preloader-inner"><div class="preloader-mat"><i class="bi bi-house-heart-fill"></i></div><p style="color:var(--clr-primary);font-weight:600;font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;margin:0;">Loading…</p></div></div>
+<div id="preloader"><div class="preloader-inner"><div class="preloader-mat"><i class="bi bi-house-heart-fill"></i></div><p style="color:var(--clr-primary-ink);font-weight:600;font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;margin:0;">Loading…</p></div></div>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-warm navbar-expand-lg" id="mainNavbar">
@@ -27,7 +27,7 @@
         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-actions ms-2"><button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button><a href="login.html" class="btn-warm ms-2" style="padding:10px 20px;font-size:0.85rem;"><i class="bi bi-person-fill"></i> Sign In</a></div>
+      <div class="nav-actions ms-2"><button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button><a href="design-your-own.html" class="btn-warm ms-2 btn-sm"><i class="bi bi-palette2"></i> Design Your Mat</a></div>
     </div>
   </div>
 </nav>
@@ -39,7 +39,7 @@
     <div class="section-badge"><i class="bi bi-journal-richtext"></i> Stories & Guides</div>
     <h1>Our <em style="color:var(--clr-primary-light);">Blog</em></h1>
     <p class="page-header-sub">Design tips, mat care guides, and home styling inspiration.</p>
-    <div class="page-header-cta"><a href="design-your-own.html" class="btn-warm" style="font-size:0.95rem;padding:14px 30px;"><i class="bi bi-palette2"></i> Design Your Mat</a><a href="services.html" class="btn-warm-outline" style="font-size:0.95rem;padding:14px 30px;"><i class="bi bi-grid-3x3-gap"></i> Explore Services</a></div>
+    <div class="page-header-cta"><a href="design-your-own.html" class="btn-warm"><i class="bi bi-palette2"></i> Design Your Mat</a><a href="services.html" class="btn-warm-outline"><i class="bi bi-grid-3x3-gap"></i> Explore Services</a></div>
   </div>
 </section>
 
@@ -57,9 +57,9 @@
             <h2 id="featured-blog-title" style="color:#F5EDE0;font-size:clamp(1.4rem,2.5vw,2.2rem);font-weight:700;margin-bottom:14px;font-family:var(--ff-display);line-height:1.3;">How to Choose the Perfect Doormat for Every Room in Your Home</h2>
             <p style="color:rgba(245,237,224,0.8);font-size:0.95rem;line-height:1.8;margin-bottom:20px;">Not all doormats are equal. From material selection to sizing, color theory to placement — our comprehensive guide helps you make the best choice.</p>
             <div class="d-flex align-items-center gap-4">
-              <div class="d-flex align-items-center gap-2"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&auto=format&fit=crop&q=80" class="reviewer-img" alt="Elena Hartwell" style="width:36px;height:36px;" /><span style="color:rgba(245,237,224,0.85);font-size:0.85rem;font-weight:600;">Elena Hartwell</span></div>
-              <span style="color:rgba(245,237,224,0.5);font-size:0.82rem;"><i class="bi bi-book me-1"></i>8 min read</span>
-              <span style="color:rgba(245,237,224,0.5);font-size:0.82rem;"><i class="bi bi-eye me-1"></i>3,247 views</span>
+              <div class="blog-author blog-author-lg blog-author-light"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&auto=format&fit=crop&q=80" alt="Elena Hartwell" loading="lazy" /></span><span class="author-name">Elena Hartwell</span></div>
+              <span style="color:rgba(245,237,224,0.85);font-size:0.82rem;"><i class="bi bi-book me-1"></i>8 min read</span>
+              <span style="color:rgba(245,237,224,0.85);font-size:0.82rem;"><i class="bi bi-eye me-1"></i>3,247 views</span>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@
         <button class="filter-tab" data-filter="business">Business</button>
         <button class="filter-tab" data-filter="seasonal">Seasonal</button>
       </div>
-      <div style="position:relative;"><input type="search" class="form-control" placeholder="Search posts…" style="padding-left:36px;width:220px;" /><i class="bi bi-search" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--clr-text-muted);font-size:0.85rem;"></i></div>
+      <div style="position:relative;"><input type="search" class="form-control" aria-label="Search blog posts" placeholder="Search posts…" style="padding-left:36px;width:220px;" /><i class="bi bi-search" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--clr-text-muted);font-size:0.85rem;"></i></div>
     </div>
   </div>
 </section>
@@ -98,7 +98,7 @@
               <div class="blog-meta"><span class="tag-chip" style="font-size:0.72rem;">Design Tips</span><span><i class="bi bi-calendar3 me-1"></i>Oct 1, 2026</span></div>
               <h3>7 Fonts That Look Amazing on Custom Doormats</h3>
               <p>Typography is everything. We rounded up the 7 best font styles that elevate any custom mat from ordinary to extraordinary...</p>
-              <div class="blog-footer"><div class="d-flex align-items-center gap-2"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&auto=format&fit=crop&q=80" class="reviewer-img" alt="Priya Mehta" style="width:30px;height:30px;" /><span style="font-size:0.82rem;font-weight:600;">Priya Mehta</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>5 min</span></div>
+              <div class="blog-footer"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&auto=format&fit=crop&q=80" alt="Priya Mehta" loading="lazy" /></span><span class="author-name">Priya Mehta</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>5 min</span></div>
             </div>
           </article>
         </a>
@@ -111,7 +111,7 @@
               <div class="blog-meta"><span class="tag-chip" style="font-size:0.72rem;">Mat Care</span><span><i class="bi bi-calendar3 me-1"></i>Sep 22, 2026</span></div>
               <h3>How to Clean and Maintain Your Coir Doormat</h3>
               <p>Natural coir mats are long-lasting — if you know how to care for them. Here's our definitive guide to cleaning, maintaining, and extending mat life...</p>
-              <div class="blog-footer"><div class="d-flex align-items-center gap-2"><img src="https://images.unsplash.com/photo-1560250097-0dc05abe70f8?w=60&auto=format&fit=crop&q=80" class="reviewer-img" alt="David Chen" style="width:30px;height:30px;" /><span style="font-size:0.82rem;font-weight:600;">David Chen</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>4 min</span></div>
+              <div class="blog-footer"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1560250097-0dc05abe70f8?w=60&auto=format&fit=crop&q=80" alt="David Chen" loading="lazy" /></span><span class="author-name">David Chen</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>4 min</span></div>
             </div>
           </article>
         </a>
@@ -124,7 +124,7 @@
               <div class="blog-meta"><span class="tag-chip" style="font-size:0.72rem;">Trends</span><span><i class="bi bi-calendar3 me-1"></i>Sep 15, 2026</span></div>
               <h3>Top Doormat Design Trends for 2026</h3>
               <p>From maximalist patterns to minimalist elegance — these are the doormat design trends that are taking over entrances everywhere in 2026...</p>
-              <div class="blog-footer"><div class="d-flex align-items-center gap-2"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&auto=format&fit=crop&q=80" class="reviewer-img" alt="Elena Hartwell" style="width:30px;height:30px;" /><span style="font-size:0.82rem;font-weight:600;">Elena Hartwell</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>6 min</span></div>
+              <div class="blog-footer"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&auto=format&fit=crop&q=80" alt="Elena Hartwell" loading="lazy" /></span><span class="author-name">Elena Hartwell</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>6 min</span></div>
             </div>
           </article>
         </a>
@@ -137,7 +137,7 @@
               <div class="blog-meta"><span class="tag-chip" style="font-size:0.72rem;">Business</span><span><i class="bi bi-calendar3 me-1"></i>Sep 10, 2026</span></div>
               <h3>Why Branded Doormats Matter for Your Business</h3>
               <p>First impressions happen at the door. We explore the psychology of branded entrance mats and why smart businesses invest in them...</p>
-              <div class="blog-footer"><div class="d-flex align-items-center gap-2"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&auto=format&fit=crop&q=80" class="reviewer-img" alt="Marcus Hartwell" style="width:30px;height:30px;" /><span style="font-size:0.82rem;font-weight:600;">Marcus Hartwell</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>7 min</span></div>
+              <div class="blog-footer"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&auto=format&fit=crop&q=80" alt="Marcus Hartwell" loading="lazy" /></span><span class="author-name">Marcus Hartwell</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>7 min</span></div>
             </div>
           </article>
         </a>
@@ -150,7 +150,7 @@
               <div class="blog-meta"><span class="tag-chip" style="font-size:0.72rem;">Seasonal</span><span><i class="bi bi-calendar3 me-1"></i>Sep 5, 2026</span></div>
               <h3>Fall & Winter Doormat Styling Guide</h3>
               <p>As the seasons change, your entrance should too. Here's our complete guide to seasonal mat swaps, cozy themes, and holiday designs...</p>
-              <div class="blog-footer"><div class="d-flex align-items-center gap-2"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&auto=format&fit=crop&q=80" class="reviewer-img" alt="Priya Mehta" style="width:30px;height:30px;" /><span style="font-size:0.82rem;font-weight:600;">Priya Mehta</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>5 min</span></div>
+              <div class="blog-footer"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&auto=format&fit=crop&q=80" alt="Priya Mehta" loading="lazy" /></span><span class="author-name">Priya Mehta</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>5 min</span></div>
             </div>
           </article>
         </a>
@@ -163,7 +163,7 @@
               <div class="blog-meta"><span class="tag-chip" style="font-size:0.72rem;">Design Tips</span><span><i class="bi bi-calendar3 me-1"></i>Aug 28, 2026</span></div>
               <h3>Color Psychology in Doormat Design</h3>
               <p>Color affects how guests feel the moment they step to your door. Learn how to use warm, cool, and neutral tones to create the perfect first impression...</p>
-              <div class="blog-footer"><div class="d-flex align-items-center gap-2"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&auto=format&fit=crop&q=80" class="reviewer-img" alt="Elena Hartwell" style="width:30px;height:30px;" /><span style="font-size:0.82rem;font-weight:600;">Elena Hartwell</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>6 min</span></div>
+              <div class="blog-footer"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&auto=format&fit=crop&q=80" alt="Elena Hartwell" loading="lazy" /></span><span class="author-name">Elena Hartwell</span></div><span style="font-size:0.82rem;color:var(--clr-text-muted);"><i class="bi bi-book me-1"></i>6 min</span></div>
             </div>
           </article>
         </a>
@@ -200,12 +200,12 @@
         </div>
       </div>
       <div class="col-lg-4 animate-on-scroll slide-right">
-        <div class="card-warm p-4">
+        <div class="card-warm p-4 blog-newsletter">
           <h4 style="font-size:1.05rem;margin-bottom:16px;"><i class="bi bi-envelope-heart me-2 text-primary-warm"></i>Blog Newsletter</h4>
           <p style="font-size:0.88rem;color:var(--clr-text-muted);margin-bottom:16px;">Get new articles, design tips, and inspiration delivered every week.</p>
           <form class="form-warm" data-validate>
-            <input type="text" class="form-control mb-3" placeholder="Your name" required />
-            <input type="email" class="form-control mb-3" placeholder="your@email.com" required />
+            <input type="text" class="form-control mb-3" placeholder="Your name" aria-label="Your name" autocomplete="name" required />
+            <input type="email" class="form-control mb-3" placeholder="your@email.com" aria-label="Email address" autocomplete="email" required />
             <button class="btn-warm w-100" type="submit"><i class="bi bi-send"></i> Subscribe Now</button>
           </form>
           <div style="font-size:0.75rem;color:var(--clr-text-muted);text-align:center;margin-top:10px;">Weekly articles. No spam. Unsubscribe anytime.</div>
@@ -227,7 +227,7 @@
         <a href="blog-details.html" class="text-decoration-none">
           <div class="d-flex gap-4 card-warm p-4">
             <div style="width:90px;height:90px;border-radius:var(--radius-md);overflow:hidden;flex-shrink:0;"><img src="https://images.pexels.com/photos/5840867/pexels-photo-5840867.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Top-down view of a welcome mat with boots" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-            <div><div class="blog-meta mb-1"><span class="tag-chip" style="font-size:0.68rem;">Guide</span></div><h4 style="font-size:0.95rem;margin-bottom:6px;color:var(--clr-text);">The Ultimate Doormat Size Guide</h4><p style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:8px;">How to measure your door opening and choose the right mat dimensions.</p><span style="font-size:0.78rem;color:var(--clr-text-muted);"><i class="bi bi-eye me-1"></i>4,128 views</span></div>
+            <div><div class="blog-meta mb-1"><span class="tag-chip" style="font-size:0.68rem;">Guide</span></div><h4 style="font-size:0.95rem;margin-bottom:6px;color:var(--clr-text);">The Ultimate Doormat Size Guide</h4><p style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:8px;">How to measure your door opening and choose the right mat dimensions.</p><div class="d-flex align-items-center justify-content-between gap-2 flex-wrap"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&auto=format&fit=crop&q=80" alt="Elena Hartwell" loading="lazy" /></span><span class="author-name">Elena Hartwell</span></div><span style="font-size:0.78rem;color:var(--clr-text-muted);"><i class="bi bi-eye me-1"></i>4,128 views</span></div></div>
           </div>
         </a>
       </div>
@@ -235,7 +235,7 @@
         <a href="blog-details.html" class="text-decoration-none">
           <div class="d-flex gap-4 card-warm p-4">
             <div style="width:90px;height:90px;border-radius:var(--radius-md);overflow:hidden;flex-shrink:0;"><img src="https://images.pexels.com/photos/37294147/pexels-photo-37294147.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Coiled coir ropes showing natural fiber texture" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-            <div><div class="blog-meta mb-1"><span class="tag-chip" style="font-size:0.68rem;">Comparison</span></div><h4 style="font-size:0.95rem;margin-bottom:6px;color:var(--clr-text);">Natural vs. Synthetic Mat Materials</h4><p style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:8px;">A comprehensive comparison to help you choose the best material for your needs.</p><span style="font-size:0.78rem;color:var(--clr-text-muted);"><i class="bi bi-eye me-1"></i>3,891 views</span></div>
+            <div><div class="blog-meta mb-1"><span class="tag-chip" style="font-size:0.68rem;">Comparison</span></div><h4 style="font-size:0.95rem;margin-bottom:6px;color:var(--clr-text);">Natural vs. Synthetic Mat Materials</h4><p style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:8px;">A comprehensive comparison to help you choose the best material for your needs.</p><div class="d-flex align-items-center justify-content-between gap-2 flex-wrap"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1560250097-0dc05abe70f8?w=60&auto=format&fit=crop&q=80" alt="David Chen" loading="lazy" /></span><span class="author-name">David Chen</span></div><span style="font-size:0.78rem;color:var(--clr-text-muted);"><i class="bi bi-eye me-1"></i>3,891 views</span></div></div>
           </div>
         </a>
       </div>
@@ -243,7 +243,7 @@
         <a href="blog-details.html" class="text-decoration-none">
           <div class="d-flex gap-4 card-warm p-4">
             <div style="width:90px;height:90px;border-radius:var(--radius-md);overflow:hidden;flex-shrink:0;"><img src="https://images.pexels.com/photos/9980728/pexels-photo-9980728.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Shoes on a mat by a rain-framed door" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-            <div><div class="blog-meta mb-1"><span class="tag-chip" style="font-size:0.68rem;">Wedding</span></div><h4 style="font-size:0.95rem;margin-bottom:6px;color:var(--clr-text);">10 Unique Wedding Doormat Ideas</h4><p style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:8px;">Creative ways to incorporate custom mats into your wedding day decor.</p><span style="font-size:0.78rem;color:var(--clr-text-muted);"><i class="bi bi-eye me-1"></i>3,654 views</span></div>
+            <div><div class="blog-meta mb-1"><span class="tag-chip" style="font-size:0.68rem;">Wedding</span></div><h4 style="font-size:0.95rem;margin-bottom:6px;color:var(--clr-text);">10 Unique Wedding Doormat Ideas</h4><p style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:8px;">Creative ways to incorporate custom mats into your wedding day decor.</p><div class="d-flex align-items-center justify-content-between gap-2 flex-wrap"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&auto=format&fit=crop&q=80" alt="Priya Mehta" loading="lazy" /></span><span class="author-name">Priya Mehta</span></div><span style="font-size:0.78rem;color:var(--clr-text-muted);"><i class="bi bi-eye me-1"></i>3,654 views</span></div></div>
           </div>
         </a>
       </div>
@@ -251,7 +251,7 @@
         <a href="blog-details.html" class="text-decoration-none">
           <div class="d-flex gap-4 card-warm p-4">
             <div style="width:90px;height:90px;border-radius:var(--radius-md);overflow:hidden;flex-shrink:0;"><img src="https://images.pexels.com/photos/6758787/pexels-photo-6758787.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Carpet runner in a modern hotel hallway" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-            <div><div class="blog-meta mb-1"><span class="tag-chip" style="font-size:0.68rem;">Business</span></div><h4 style="font-size:0.95rem;margin-bottom:6px;color:var(--clr-text);">How Hotels Use Mats to Build Brand Identity</h4><p style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:8px;">Case studies from 5 boutique hotels that transformed their brand with custom mats.</p><span style="font-size:0.78rem;color:var(--clr-text-muted);"><i class="bi bi-eye me-1"></i>2,970 views</span></div>
+            <div><div class="blog-meta mb-1"><span class="tag-chip" style="font-size:0.68rem;">Business</span></div><h4 style="font-size:0.95rem;margin-bottom:6px;color:var(--clr-text);">How Hotels Use Mats to Build Brand Identity</h4><p style="font-size:0.82rem;color:var(--clr-text-muted);margin-bottom:8px;">Case studies from 5 boutique hotels that transformed their brand with custom mats.</p><div class="d-flex align-items-center justify-content-between gap-2 flex-wrap"><div class="blog-author"><span class="author-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&auto=format&fit=crop&q=80" alt="Marcus Hartwell" loading="lazy" /></span><span class="author-name">Marcus Hartwell</span></div><span style="font-size:0.78rem;color:var(--clr-text-muted);"><i class="bi bi-eye me-1"></i>2,970 views</span></div></div>
           </div>
         </a>
       </div>
@@ -265,7 +265,7 @@
     <div class="cta-banner">
       <div class="row align-items-center g-4">
         <div class="col-lg-8"><div class="section-badge" style="margin-bottom:12px;background:rgba(201,123,75,0.2);border-color:rgba(201,123,75,0.4);color:var(--clr-primary-light);"><i class="bi bi-palette2"></i> Ready to Create?</div><h2 style="font-size:1.8rem;margin-bottom:10px;color:#F5EDE0;">Turn Your Inspiration Into a <em style="color:var(--clr-primary-light);">Real Mat</em></h2><p style="color:rgba(245,237,224,0.85);margin:0;font-size:0.95rem;">All this design knowledge — now put it into action. Create your perfect custom mat today.</p></div>
-        <div class="col-lg-4 text-lg-end"><a href="design-your-own.html" class="btn-warm" style="font-size:1rem;padding:16px 32px;"><i class="bi bi-palette2"></i> Start Designing Now</a></div>
+        <div class="col-lg-4 text-lg-end"><a href="design-your-own.html" class="btn-warm btn-lg"><i class="bi bi-palette2"></i> Start Designing Now</a></div>
       </div>
     </div>
   </div>
@@ -316,10 +316,10 @@
         <h6>Stay Inspired</h6>
         <p style="color:rgba(245,237,224,0.65);font-size:0.9rem;margin-bottom:16px;">Get new designs, exclusive offers, and home styling tips.</p>
         <form class="d-flex gap-2 mb-3" data-validate>
-          <input type="email" class="form-control" placeholder="Enter your email" required style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:var(--clr-warm);" aria-label="Email for newsletter" />
-          <button class="btn-warm" type="submit" style="padding:11px 20px;white-space:nowrap;font-size:0.85rem;">Subscribe</button>
+          <input type="email" class="form-control" placeholder="Enter your email" required style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:var(--clr-cream);" aria-label="Email for newsletter" />
+          <button class="btn-warm btn-sm" type="submit">Subscribe</button>
         </form>
-        <p style="color:rgba(245,237,224,0.4);font-size:0.78rem;">No spam, ever. Unsubscribe anytime.</p>
+        <p style="color:rgba(245,237,224,0.8);font-size:0.78rem;">No spam, ever. Unsubscribe anytime.</p>
       </div>
     </div>
   </div>
@@ -327,15 +327,15 @@
     <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
       <p>© 2026 DoorMat Studio. All rights reserved.</p>
       <div class="d-flex gap-3 flex-wrap">
-        <a href="#" style="color:rgba(245,237,224,0.5);font-size:0.82rem;">Privacy Policy</a>
-        <a href="#" style="color:rgba(245,237,224,0.5);font-size:0.82rem;">Terms of Service</a>
-        <a href="#" style="color:rgba(245,237,224,0.5);font-size:0.82rem;">Cookie Policy</a>
+        <a href="#" style="color:rgba(245,237,224,0.85);font-size:0.82rem;">Privacy Policy</a>
+        <a href="#" style="color:rgba(245,237,224,0.85);font-size:0.82rem;">Terms of Service</a>
+        <a href="#" style="color:rgba(245,237,224,0.85);font-size:0.82rem;">Cookie Policy</a>
       </div>
     </div>
   </div>
 </footer>
 
-<div class="cookie-banner"><div class="container d-flex flex-wrap align-items-center justify-content-between gap-3"><div class="d-flex align-items-center gap-3"><i class="bi bi-cookie" style="font-size:1.5rem;color:var(--clr-primary-light);"></i><p style="margin:0;font-size:0.88rem;color:rgba(245,237,224,0.85);">We use cookies to enhance your experience.</p></div><button class="btn-warm" style="padding:10px 22px;font-size:0.85rem;" data-accept-cookies>Got it!</button></div></div>
+<div class="cookie-banner"><div class="container d-flex flex-wrap align-items-center justify-content-between gap-3"><div class="d-flex align-items-center gap-3"><i class="bi bi-cookie" style="font-size:1.5rem;color:var(--clr-primary-light);"></i><p style="margin:0;font-size:0.88rem;color:rgba(245,237,224,0.85);">We use cookies to enhance your experience.</p></div><button class="btn-warm btn-sm" data-accept-cookies>Got it!</button></div></div>
 <button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
